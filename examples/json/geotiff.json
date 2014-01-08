@@ -1,0 +1,38 @@
+{
+    "type": "FeatureCollection",
+    "properties" : {
+        "lang" : "en",
+        "id" : "http://www.opengis.net/owc/1.0/examples/geotiff",
+        "title" : "GeoTIFF Example",
+        "subtitle" : "GeoTIFF Example",
+        "updated" : "2012-11-04T17:26:23Z",
+        "authors" : [{"name" : "Joan Masó"}],
+        "categories" : [],
+        "contributors" : [],
+        "links" : [{
+            "rel" : "profile",
+            "href" : "http://www.opengis.net/spec/owc-atom/1.0/req/core",
+            "title" : "This file is compliant with version 1.0 of OGC Context"
+            }]
+        },
+     "features" : [{
+        "type": "Feature",
+        "geometry": {},
+        "properties": {
+            "id" : "ftp://ftp.remotesensing.org/pub/geotiff/samples/gdal_eg/cea.txt",
+            "title" : "GeoTIFF Example",
+            "updated" : "2011-11-01T00:00:00Z",
+            "content" : "GeoTIFF Example coming from ftp://ftp.remotesensing.org/pub/geotiff/samples/gdal_eg",
+            "categories" : [],
+            "links" : [],
+            "offerings" : [{
+                "code" : "http://www.opengis.net/spec/owc-atom/1.0/req/geotiff",
+                "operations" : [],
+                "contents" : [{
+                    "type" : "image/tiff",
+                    "href" : "ftp://ftp.remotesensing.org/pub/geotiff/samples/gdal_eg/cea.tif",
+                    "content" : ""}]
+                }]
+             }
+         }]
+}

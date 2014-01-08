@@ -1,0 +1,37 @@
+{
+    "type": "FeatureCollection",
+    "properties" : {
+        "lang" : "en",
+        "id" : "http://www.opengis.net/owc/1.0/examples/gmlcov",
+        "title" : "GMLCOV Example",
+        "subtitle" : "GMLCOV Example",
+        "updated" : "2012-11-04T17:26:23Z",
+        "authors" : [{"name" : "Joan Masó"}],
+        "categories" : [],
+        "contributors" : [],
+        "links" : [{
+            "rel" : "profile",
+            "href" : "http://www.opengis.net/spec/owc-atom/1.0/req/core",
+            "title" : "This file is compliant with version 1.0 of OGC Context"
+            }]
+        },
+     "features" : [{
+        "type": "Feature",
+        "geometry": {},
+        "properties": {
+            "id" : "http://www.opengis.net/spec/owc-atom/1.0/req/gmlcov/1",
+            "title" : "GMLCOV Example",
+            "updated" : "2011-11-01T00:00:00Z",
+            "content" : "GMLCOV example",
+            "categories" : [],
+            "links" : [],
+            "offerings" : [{
+                "code" : "http://www.opengis.net/spec/owc-atom/1.0/req/gmlcov",
+                "operations" : [],
+                "contents" : [{
+                    "type" : "application/gml+xml",
+                    "content" : "<gmlcov:GridCoverage xsi:schemaLocation=\"http://www.opengis.net/gmlcov/1.0 http://schemas.opengis.net/gmlcov/1.0/gmlcovAll.xsd\" gml:id=\"C0001\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:gmlcov=\"http://www.opengis.net/gmlcov/1.0\" xmlns:swe=\"http://www.opengis.net/swe/2.0\" xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"><gml:boundedBy xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><gml:Envelope srsName=\"http://www.opengis.net/def/crs/EPSG/0/4326\" axisLabels=\"Lat Long\" uomLabels=\"deg deg\" srsDimension=\"2\" xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><gml:lowerCorner xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\">-90 -180</gml:lowerCorner><gml:upperCorner xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\">90 180</gml:upperCorner></gml:Envelope></gml:boundedBy><gml:domainSet xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><gml:Grid gml:id=\"gr0001_C0001\" dimension=\"2\" xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><gml:limits xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><gml:GridEnvelope xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><gml:low xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\">0 0</gml:low><gml:high xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\">202 259</gml:high></gml:GridEnvelope></gml:limits><gml:axisLabels xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\">Lat Long</gml:axisLabels></gml:Grid></gml:domainSet><gml:rangeSet xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><File xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"><rangeParameters xlink:href=\"ftp://ftp.remotesensing.org/pub/geotiff/samples/gdal_eg/cea.tif\" xlink:role=\"http://www.opengis.net/spec/GMLCOV_geotiff-coverages/1.0/conf/geotiff-coverage\" xlink:arcrole=\"fileReference\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"/><fileReference xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\">ftp://ftp.remotesensing.org/pub/geotiff/samples/gdal_eg/cea.tif</fileReference><fileStructure xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\"/><mimeType xmlns=\"http://www.opengis.net/gml/3.2\" xmlns:gml=\"http://www.opengis.net/gml/3.2\">image/tiff</mimeType></File></gml:rangeSet><gmlcov:rangeType xmlns:gmlcov=\"http://www.opengis.net/gmlcov/1.0\" xmlns:swe=\"http://www.opengis.net/swe/2.0\"><swe:DataRecord xmlns:swe=\"http://www.opengis.net/swe/2.0\"><swe:field name=\"gray\" xmlns:swe=\"http://www.opengis.net/swe/2.0\"><swe:Quantity definition=\"http://opengis.net/def/property/OGC/0/Radiance\" xmlns:swe=\"http://www.opengis.net/swe/2.0\"><swe:description xmlns:swe=\"http://www.opengis.net/swe/2.0\">Gray Channel</swe:description><swe:uom code=\"W/cm2\" xmlns:swe=\"http://www.opengis.net/swe/2.0\"/></swe:Quantity></swe:field></swe:DataRecord></gmlcov:rangeType></gmlcov:GridCoverage>"}]
+                }]
+             }
+         }]
+}
