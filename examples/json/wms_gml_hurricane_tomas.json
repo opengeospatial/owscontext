@@ -1,5 +1,7 @@
 {
     "type": "FeatureCollection",
+    "geometry": {"type" : "Polygon",
+	       "coordinates" : [[[-90.540890,-1.417726],[-90.540890,33.238194],[-22.622864,33.238194],[-22.622864,-1.417726]]]},
     "properties" : {
         "lang" : "en",
         "id" : "http://www.opengis.net/owc/1.0/examples/Hurricane-Tomas",
@@ -16,7 +18,8 @@
         },
      "features" : [{
         "type": "Feature",
-        "geometry": {},
+        "geometry": {"type" : "Polygon",
+	       "coordinates" : [[[-90.540890,-1.417726],[-90.540890,33.238194],[-22.622864,33.238194],[-22.622864,-1.417726]]]},
         "properties": {
             "id" : "Web Map Service Layer",
             "title" : "Web Map Service Layer",
@@ -44,7 +47,8 @@
              }
          },{
         "type": "Feature",
-        "geometry": {},
+        "geometry": {"type" : "Polygon",
+	       "coordinates" : [[[-90.540890,-1.417726],[-90.540890,33.238194],[-22.622864,33.238194],[-22.622864,-1.417726]]]},
         "properties": {
             "id" : "Track Analysis",
             "title" : "Track Analysis",

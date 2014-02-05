@@ -79,6 +79,7 @@
 
 <xsl:template match="atom:feed">
 <xsl:value-of select="concat($new-line,$tab)"/>"type": "FeatureCollection",
+<xsl:value-of select="concat($tab,'')"/>"geometry": {<xsl:apply-templates select="georss:*[1]"/>},
 <xsl:value-of select="concat($tab,'')"/>"properties" : {
 <xsl:value-of select="concat($tab,$tab)"/><xsl:apply-templates select="." mode="atomCommonAttributes"/>	
 <xsl:for-each select="atom:*[name()!='author' and name()!='category' and name()!='contributor' and name()!='link' and name()!='entry']">
@@ -94,7 +95,7 @@
     
 <xsl:template match="atom:entry">
 <xsl:value-of select="concat($new-line,$tab,$tab)"/>"type": "Feature",
-<xsl:value-of select="concat($tab,$tab)"/>"geometry": {<xsl:apply-templates select="georss:*[1]"/>},
+<xsl:value-of select="concat($tab,$tab)"/>"geometry": {<xsl:apply-templates select="(georss:*|../georss:*)[last()]"/>},
 <xsl:value-of select="concat($tab,$tab)"/>"properties": {<xsl:apply-imports/>,
 <xsl:value-of select="concat($tab,$tab,$tab)"/>"offerings" : [<xsl:for-each select="owc:offering">{
             <xsl:apply-templates select="."/>

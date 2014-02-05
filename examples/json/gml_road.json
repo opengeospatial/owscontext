@@ -1,5 +1,8 @@
 {
     "type": "FeatureCollection",
+    "geometry": {
+              "type":"Polygon",
+              "coordinates":[[[-180.0,-90.0],[-180.0,90.0],[180.0,90.0],[180.0,-90.0],[-180.0,-90.0]]]},
     "properties" : {
         "lang" : "en",
         "id" : "http://www.opengis.net/owc/1.0/examples/gml",
@@ -29,7 +32,9 @@
         },
      "features" : [{
         "type": "Feature",
-        "geometry": {},
+        "geometry": {
+              "type":"Polygon",
+              "coordinates":[[[-180.0,-90.0],[-180.0,90.0],[180.0,90.0],[180.0,-90.0],[-180.0,-90.0]]]},
         "properties": {
             "id" : "http://www.opengis.net/owc/1.0/examples/gml/1",
             "title" : "Some Useful Road",

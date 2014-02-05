@@ -1,5 +1,7 @@
 {
     "type": "FeatureCollection",
+    "geometry": {"type" : "Polygon",
+	       "coordinates" : [[[-2,45],[8,45],[8,55],[-2,55],[-2,45]]]},
     "properties" : {
         "lang" : "en",
         "title" : "GeoServer Web Map Service",

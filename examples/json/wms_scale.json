@@ -1,5 +1,8 @@
 {
     "type": "FeatureCollection",
+    "geometry": {
+              "type":"Polygon",
+              "coordinates":[[[4567125,414475],[4567125,451575],[4588025,451575],[4588025,414475],[4567125,414475]]]},
     "properties" : {
         "lang" : "ca-CA",
         "id" : "http://www.opengis.net/owc/1.0/examples/WMS_scale",

@@ -1,5 +1,8 @@
 {
     "type": "FeatureCollection",
+    "geometry": {
+              "type":"Polygon",
+              "coordinates":[[[-72.3627630648135,18.548652],[-72.3627630648135,18.592594],[-72.2677392817456,18.592594],[-72.2677392817456,18.548652],[-72.3627630648135,18.548652]]]},
     "properties" : {
         "lang" : "en",
         "id" : "http://www.opengis.net/owc/1.0/examples/wcs1-raj",

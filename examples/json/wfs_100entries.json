@@ -1,5 +1,6 @@
 {
     "type": "FeatureCollection",
+    "geometry": {},
     "properties" : {
         "lang" : "en",
         "title" : "XtraServer WFS - interactive instruments",

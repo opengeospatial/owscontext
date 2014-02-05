@@ -1,5 +1,6 @@
 {
     "type": "FeatureCollection",
+    "geometry": {},
     "properties" : {
         "lang" : "en",
         "id" : "http://www.opengis.net/owc/1.0/examples/wmts",

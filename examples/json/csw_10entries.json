@@ -1,5 +1,6 @@
 {
     "type": "FeatureCollection",
+    "geometry": {},
     "properties" : {
         "lang" : "en",
         "id" : "http://ows-9.compusult.net/wes/serviceManagerCSW/csw/0006276a-4f6e-47c1-94bb-f604245fac57",

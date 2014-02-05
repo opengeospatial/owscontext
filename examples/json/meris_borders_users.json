@@ -1,5 +1,6 @@
 {
     "type": "FeatureCollection",
+    "geometry": {},
     "properties" : {
         "lang" : "en",
         "title" : "Satellite Image and Countries borders over France and England and the list of OGC users",

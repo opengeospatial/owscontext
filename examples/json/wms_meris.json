@@ -1,5 +1,8 @@
 {
     "type": "FeatureCollection",
+    "geometry": {
+              "type":"Polygon",
+              "coordinates":[[[4539000,355000],[4539000,475000],[4619000,475000],[4619000,355000],[4539000,355000]]]},
     "properties" : {
         "lang" : "en",
         "title" : "Satellite Image and Countries borders Over France and England",

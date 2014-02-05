@@ -1,5 +1,6 @@
 {
     "type": "FeatureCollection",
+    "geometry": {},
     "properties" : {
         "lang" : "en",
         "title" : "Atlas of the Cryosphere: Southern Hemisphere",
