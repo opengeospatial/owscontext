@@ -76,43 +76,49 @@
 <!-- ************************************** -->
 
 
-
+<!--  override of atom:feed as features are outside properties -->
 <xsl:template match="atom:feed">
-<xsl:value-of select="concat($new-line,$tab)"/>"type": "FeatureCollection",
-<xsl:value-of select="concat($tab,'')"/>"geometry": {<xsl:apply-templates select="georss:*[1]"/>},
-<xsl:value-of select="concat($tab,'')"/>"properties" : {
-<xsl:value-of select="concat($tab,$tab)"/><xsl:apply-templates select="." mode="atomCommonAttributes"/>	
-<xsl:for-each select="atom:*[name()!='author' and name()!='category' and name()!='contributor' and name()!='link' and name()!='entry']">
+	"type": "FeatureCollection",
+	"id": "<xsl:value-of select="atom:id"/>",
+	"geometry": {<xsl:apply-templates select="georss:*[1]"/>},
+	"properties" : {
+		<xsl:apply-templates select="." mode="atomCommonAttributes"/>
+		<xsl:for-each select="atom:*[name()!='id' and name()!='author' and name()!='category' and name()!='contributor' and name()!='link' and name()!='entry']">
 <xsl:value-of select="concat($new-line,$tab,$tab)"/><xsl:apply-templates select="."/>,<xsl:if test="position() &lt; last()"><xsl:value-of select="''"/></xsl:if></xsl:for-each>
-<xsl:value-of select="concat($new-line,$tab,$tab)"/>"authors" : [<xsl:for-each select="atom:author">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-<xsl:value-of select="concat($tab,$tab)"/>"categories" : [<xsl:for-each select="atom:category">{<xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/><xsl:apply-templates select="."/><xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-<xsl:value-of select="concat($tab,$tab)"/>"contributors" : [<xsl:for-each select="atom:contributor">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-<xsl:value-of select="concat($tab,$tab)"/>"links" : [<xsl:for-each select="atom:link">{<xsl:for-each select="@*"><xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/><xsl:apply-templates select="."/><xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>
-<xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>]
-<xsl:value-of select="concat($tab,$tab)"/>},
-<xsl:value-of select="concat($tab,'')"/> "features" : [<xsl:for-each select="atom:entry">{<xsl:apply-templates select="."/><xsl:value-of select="concat($tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>]
+		"authors" : [<xsl:for-each select="atom:author">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+		"contributors" : [<xsl:for-each select="atom:contributor">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+		"categories" : [<xsl:for-each select="atom:category">{<xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/><xsl:apply-templates select="."/><xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+		"links" : [<xsl:for-each select="atom:link">{<xsl:for-each select="@*"><xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/><xsl:apply-templates select="."/><xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>
+			}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>]
+		},
+	"features" : [<xsl:for-each select="atom:entry">{<xsl:apply-templates select="."/><xsl:value-of select="concat($tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>]
 </xsl:template>
     
+
+<!--  override extension atom:entry for  -->
 <xsl:template match="atom:entry">
-<xsl:value-of select="concat($new-line,$tab,$tab)"/>"type": "Feature",
-<xsl:value-of select="concat($tab,$tab)"/>"geometry": {<xsl:apply-templates select="(georss:*|../georss:*)[last()]"/>},
-<xsl:value-of select="concat($tab,$tab)"/>"properties": {<xsl:apply-imports/>,
-<xsl:value-of select="concat($tab,$tab,$tab)"/>"offerings" : [<xsl:for-each select="owc:offering">{
+		"type": "Feature",
+		"id": "<xsl:value-of select="atom:id"/>",
+		"geometry": {<xsl:apply-templates select="(georss:*|../georss:*)[last()]"/>},
+		"properties": {<xsl:apply-imports/>,
+			"offerings" : [<xsl:for-each select="owc:offering">{
             <xsl:apply-templates select="."/>
-<xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>]
+				}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>]
              }
  </xsl:template>
+
+ <xsl:template match="atom:id"/>
 
 <xsl:template match="owc:offering">
 <xsl:for-each select="@*">
 <xsl:value-of select="concat($tab,'')"/><xsl:apply-templates select="."/>,</xsl:for-each>
-<xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab)"/>"operations" : [<xsl:for-each select="owc:operation">{<xsl:value-of select="concat($tab,$tab,$tab,$tab)"/><xsl:apply-templates select="."/><xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-<xsl:value-of select="concat($tab,$tab,$tab,$tab)"/>"contents" : [<xsl:for-each select="owc:content">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,<xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab)"/></xsl:if></xsl:for-each>]</xsl:template>
+				"operations" : [<xsl:for-each select="owc:operation">{<xsl:value-of select="concat($tab,$tab,$tab,$tab)"/><xsl:apply-templates select="."/><xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+				"contents" : [<xsl:for-each select="owc:content">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,<xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab)"/></xsl:if></xsl:for-each>]</xsl:template>
 
 <xsl:template match="owc:operation"><xsl:for-each select="@*">
 <xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab,$tab)"/><xsl:apply-templates select="."/>,</xsl:for-each>
-<xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab,$tab)"/>"request":{<xsl:apply-templates select="owc:request"/>},
-<xsl:value-of select="concat($tab,$tab,$tab,$tab,$tab)"/>"result":{<xsl:apply-templates select="owc:result"/>}</xsl:template>
+					"request":{<xsl:apply-templates select="owc:request"/>},
+					"result":{<xsl:apply-templates select="owc:result"/>}</xsl:template>
 
 <xsl:template match="owc:request | owc:result ">
 <xsl:for-each select="@*">
@@ -122,7 +128,7 @@
 <xsl:with-param name="val"><xsl:apply-templates select="$myNode" mode="xml-to-string"/></xsl:with-param>
 </xsl:call-template>
 </xsl:variable>
-<xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab,$tab,$tab)"/>"content" : "<xsl:value-of select="$nodeAsStr"/>"</xsl:template>
+<xsl:value-of select="concat($new-line,$tab,$tab,$tab,$tab,$tab,$tab)"/>"<xsl:value-of select="local-name()"/> : "<xsl:value-of select="$nodeAsStr"/>"</xsl:template>
 
 <xsl:template match="owc:content">
 <xsl:for-each select="@*">

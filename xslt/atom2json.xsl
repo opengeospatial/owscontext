@@ -39,14 +39,17 @@
 <xsl:template match="/">{<xsl:apply-templates select="atom:feed"/>}</xsl:template>
 
 <xsl:template match="atom:feed">
-<xsl:apply-templates select="." mode="atomCommonAttributes"/>	
-	<xsl:for-each select="atom:*[name()!='author' and name()!='category' and name()!='contributor' and name()!='link' and name()!='entry']"><xsl:apply-templates select="."/>,<xsl:if test="position() &lt; last()"><xsl:value-of select="concat($new-line,$tab)"/></xsl:if></xsl:for-each>
-	"authors" : [<xsl:for-each select="atom:author">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-	"categories" : [<xsl:for-each select="atom:category">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-	"contributors" : [<xsl:for-each select="atom:contributor">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-	"links" : [<xsl:for-each select="atom:link">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
-	"entries" : [<xsl:for-each select="atom:entry">{<xsl:apply-templates select="."/><xsl:value-of select="concat($tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if><xsl:value-of select="concat($new-line,$tab,$tab)"/></xsl:for-each>]
+<xsl:value-of select="concat($tab,$tab)"/><xsl:apply-templates select="." mode="atomCommonAttributes"/>
+<xsl:for-each select="atom:*[name()!='id' and name()!='author' and name()!='category' and name()!='contributor' and name()!='link' and name()!='entry']">
+<xsl:apply-templates select="."/>,<xsl:if test="position() &lt; last()"><xsl:value-of select="concat($new-line,$tab)"/></xsl:if></xsl:for-each>
+<xsl:value-of select="concat($new-line,$tab,$tab)"/>"authors" : [<xsl:for-each select="atom:author">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+<xsl:value-of select="concat($tab,$tab)"/>"contributors" : [<xsl:for-each select="atom:contributor">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+<xsl:value-of select="concat($tab,$tab)"/>"categories" : [<xsl:for-each select="atom:category">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+<xsl:value-of select="concat($tab,$tab)"/>"links" : [<xsl:for-each select="atom:link">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+<xsl:value-of select="concat($tab,$tab)"/>"entries" : [<xsl:for-each select="atom:entry">{<xsl:apply-templates select="."/><xsl:value-of select="concat($tab,$tab)"/>}<xsl:if test="position() &lt; last()">,</xsl:if><xsl:value-of select="concat($new-line,$tab,$tab)"/></xsl:for-each>]
 </xsl:template>
+
+
 
 <xsl:template match="atom:*" mode="atomCommonAttributes"><xsl:apply-templates select="@xml:base | @xml:lang"/>
 </xsl:template>
@@ -59,8 +62,10 @@
 <xsl:for-each select="@* | atom:*"><xsl:apply-templates select="."/><xsl:if test="position() &lt; last()">,<xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/><xsl:if test="name(../..)='entry'"><xsl:value-of select="$tab"/></xsl:if></xsl:if></xsl:for-each></xsl:template>
 
 <xsl:template match="atom:entry">
-<xsl:for-each select="atom:*[name()!='author' and name()!='category' and name()!='contributor' and name()!='link']"><xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/><xsl:apply-templates select="."/>,<xsl:if test="position() &lt; last()"><xsl:value-of select="''"/></xsl:if></xsl:for-each>
-<xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/>"categories" : [<xsl:for-each select="atom:categories">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+<xsl:for-each select="atom:*[name()!='id' and name()!='author' and name()!='category' and name()!='contributor' and name()!='link']"><xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/><xsl:apply-templates select="."/>,<xsl:if test="position() &lt; last()"><xsl:value-of select="''"/></xsl:if></xsl:for-each>
+<xsl:value-of select="concat($new-line,$tab,$tab,$tab)"/>"authors" : [<xsl:for-each select="atom:author">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+<xsl:value-of select="concat($tab,$tab,$tab)"/>"contributors" : [<xsl:for-each select="atom:contributor">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
+<xsl:value-of select="concat($tab,$tab,$tab)"/>"categories" : [<xsl:for-each select="atom:category">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>],
 <xsl:value-of select="concat($tab,$tab,$tab)"/>"links" : [<xsl:for-each select="atom:link">{<xsl:apply-templates select="."/>}<xsl:if test="position() &lt; last()">,</xsl:if></xsl:for-each>]</xsl:template>
 
 
