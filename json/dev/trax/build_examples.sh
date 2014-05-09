@@ -1,6 +1,6 @@
 #! /bin/sh
 PID=$$
-path="./atom"
+path="../../../atom/schemas/examples"
 output="./json/"
 for ff in `ls ${path}/*.xml`
 	do
