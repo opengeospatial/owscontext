@@ -1,4 +1,4 @@
 OWS Context
 ===========
 
-Placeholder for OWS Context SWG Work
+Published at http://www.owscontext.org/
