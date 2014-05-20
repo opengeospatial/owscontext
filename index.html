@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>OGC OWS Context</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Overview">
+    <meta name="author" content="Pedro Gonçalves">
+    <!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+    <!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+    <!--script src="js/less-1.3.3.min.js"></script-->
+    <!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="files/style.css" rel="stylesheet">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>  <![endif]-->
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="files/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="files/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="files/apple-touch-icon-57-precomposed.png">
+    <!-- <link rel="shortcut icon" href="img/favicon.png"> -->
+    <link rel="shortcut icon" href="http://www.ows.org/img/favicon.ico" type="image/x-icon">
+    <script src="files/widgets.js" id="twitter-wjs"></script>
+    <script type="text/javascript" src="files/jquery.js"></script>
+    <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="files/scripts.js"></script>
+  </head>
+  <body data-twttr-rendered="true">
+    <div class="container"> <a href="https://github.com/opengeospatial/owscontext">
+      <img style="position: absolute; top: 0; right: 0; border: 0;" src="files/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+
+      <div class="row clearfix">
+        <div class="col-md-2 column">
+          <div class="margin-top-40"> <a href="http://myogc.org/"><img src="files/ogc_logo_tnr_mlc_blue_HR.png" alt="Visit the OGC" height="50px"></a>
+          </div>
+        </div>
+        <div class="col-md-4 column">
+          <div class="page-header">
+            <h1> OWS Context
+            </h1>
+          </div>
+        </div>
+        <!-- 		<div class="col-md-2 column">
+		</div> -->
+        <div class="col-md-6 column">
+          <ul class="nav nav-pills margin-top-20">
+            <li class="active"> <a href="#standard">Read the Standard</a> </li>
+            <li> <a href="#implementations">Find Software</a> </li>
+            <li> <a href="https://twitter.com/search?q=%23owscontext&amp;src=hash" target="twit">Follow OWS Context</a> </li>
+            <!-- <li class="dropdown pull-right">
+					 <a href="#" data-toggle="dropdown" class="dropdown-toggle">Dropdown<strong class="caret"></strong></a>					<ul class="dropdown-menu">						<li>							<a href="#">Action</a>
+						</li>						<li>							<a href="#">Another action</a>						</li>
+						<li>							<a href="#">Something else here</a>						</li>						<li class="divider">
+						</li>						<li>							<a href="#">Separated link</a>						</li>
+					</ul>				</li> -->
+          </ul>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-md-8 column">
+          <h1> An Open Format Linking Geospatial Services and Information</h1>
+          <p class="lead">
+            The OGC Web Services Context Document (OWS Context) was created to
+            allow a set of configured information resources (service set) to be
+            passed between applications primarily as a collection of services.</p>
+          <p>
+            OWS Context is developed to support in-line content as well. The goal
+            is to support use cases such as the distribution of search results,
+            the exchange of a set of resources such as OGC Web Feature Service (WFS),
+            Web Map Service (WMS), Web Map Tile Service (WMTS), Web Coverage
+            Service (WCS) and others in a ‘common operating picture’.
+            Additionally OWS Context can deliver a set of configured processing
+            services (Web Processing Service (WPS)) parameters to allow the
+            processing to be reproduced on different nodes.</p>
+          <p>
+            OWS Context is aimed at replacing previous OGC attempts at
+            providing such a capability (the Web Map Context WMC) which was
+            reasonably successful but limited to WMS. Other work on the
+            ‘Location Organizer Folder (LOF)’ was also taken into consideration.
+          </p>
+        </div>
+        <div class="col-md-4 column">
+          <div> <img class="img" alt="OWS Context" src="files/owc.png" style="padding-bottom:24px;margin-left:50px" width="222px">
+          </div>
+          <div class="panel panel-default panel-warning center">
+            <div class="panel-heading">Official Standards Information</div>
+            <div class="panel-body">For all official, normative information on
+              the OWS Context standard, including PDF format download, see the <a href="http://www.opengeospatial.org/standards/owc">OGC
+                standards program OWC page</a>.</div>
+          </div>
+        </div>
+      </div>
+      <!--
+      <div class="row clearfix">
+        <div class="col-md-12 column">
+          <hr>
+        </div>
+      </div>
+
+      <div class="row clearfix well">
+        <div class="non-semantic-protector">
+          <div class="col-md-4 column center">
+            <h2 class="ribbon"><strong class="ribbon-content">For<br> Users</strong></h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            <p><a class="btn" href="#">View details »</a></p>
+          </div>
+          <div class="col-md-4 column center">
+            <h2 class="ribbon"><strong class="ribbon-content">For Data Providers</strong></h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            <p><a class="btn" href="#">View details »</a></p>
+			    </div>
+          <div class="col-md-4 column center">
+            <h2 class="ribbon"><strong class="ribbon-content">For Developers</strong></h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+            <p><a class="btn" href="#">View details »</a></p>
+          </div>
+		    </div>
+        End non-semantic-protector div
+      </div>	 -->
+      <hr><!-- Large Links -->
+      <div class="row clearfix">
+        <div class="col-md-6 column bigLinks">
+          <ul class="list-unstyled">
+            <li> <span class="glyphicon glyphicon-wrench"></span>&nbsp; <a href="#implementations">Implementations</a></li>
+            <li> <span class="glyphicon glyphicon-cog"></span>&nbsp; <a href="#sampledata">Sample Data</a> </li>
+            <li> <span class="glyphicon glyphicon-book"></span>&nbsp; <a title="" data-original-title="" href="#implementationguide" class="comingsoon">Implementation Guide</a> </li>
+          </ul>
+        </div>
+        <div class="col-md-6 column bigLinks">
+          <ul class="list-unstyled">
+            <li> <span class="glyphicon glyphicon-warning-sign"></span>&nbsp; <a href="https://github.com/opengeospatial/owscontext/issues">Issue Tracker</a> </li>
+            <li> <span class="glyphicon glyphicon-send"></span>&nbsp; <a href="https://lists.opengeospatial.org/mailman/listinfo//owscontext.swg">Mailing List</a> </li>
+            <li> <span class="glyphicon glyphicon-question-sign"></span>&nbsp; <a title="" data-original-title="" href="#faq" class="comingsoon">FAQ</a> </li>
+          </ul>
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-md-12 column"> </div>
+      </div>
+
+      <hr><!-- Standard -->
+      <div class="row clearfix well">
+        <p>&nbsp;</p>
+        <div class="row clearfix">
+          <div class="col-md-12 column text-center"> <a name="standard"></a>
+            <h1><span class="glyphicon glyphicon-book"></span>&nbsp;Standard</h1>
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="col-md-12 column lead">
+            <h3>OGC OWS Context Conceptual Model &nbsp;<small> <a href="https://portal.opengeospatial.org/files/?artifact_id=55182">pdf</a></small> <small><a href="https://portal.opengeospatial.org/files/?artifact_id=55182&format=docx">doc</a></small> </h3>
+              <ul><li>
+                This standard describes the use cases, requirements and conceptual
+                model for the OWS Context encoding standard. The goal of this
+                standard is to provide a core model, which is extended and encoded
+                as defined in extensions to this standard. A ‘context document’
+                specifies a fully configured service set which can be exchanged
+                (with a consistent interpretation) among clients supporting the standard.
+              </li></ul>
+
+            <h3>OGC OWS Context Atom Encoding Standard &nbsp;<small> <a href="https://portal.opengeospatial.org/files/?artifact_id=55183">pdf</a></small> <small><a href="https://portal.opengeospatial.org/files/?artifact_id=55183&format=docx">doc</a></small> </h3>
+              <ul><li>
+                This standard describes the Atom encoding of the OWC Context conceptual model.
+                The goal of this standard is to provide a definition of how to encode a context
+                document using the Atom document. This standard is an extension of the Atom
+                Format and inherits all requirements stated on
+                <a target="_new" href="http://tools.ietf.org/html/rfc4287">RFC-4287</a>.
+              </li></ul>
+
+            <h3>OGC OWS Context JSON Encoding Standard <small> available soon </small> </h3>
+              <ul><li>
+                This standard describes the GeoJSON encoding of the OWS Context
+                conceptual model.
+                GeoJSON is a format for encoding collections of simple geographical
+                features along with their non-spatial attributes using JSON. Features
+                in GeoJSON contain a geometry object and additional properties,
+                and a feature collection represents a list of features.
+                This document concentrates on describing the encoding in GeoJSON of
+                 the OWS Context Model.
+              </li></ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <!-- Implementations -->
+<!--
+      <div class="row clearfix well">
+        <p>&nbsp;</p>
+        <div class="row clearfix">
+          <div class="col-md-12 column text-center"> <a name="implementations"></a>
+            <h1><span class="glyphicon glyphicon-book"></span>&nbsp;Implementations</h1>
+          </div>
+        </div>
+        <div class="row clearfix">
+          <div class="col-md-12 column lead">
+            <h3>Test <a href="https://test.org/test/Test" target="_blank">test</a></h3>
+            <ul>
+              <li>Test is a small C library that allows developers to easily
+                read/write</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr>
+-->
+      <!-- Sample Data -->
+      <div class="row clearfix">
+        <div class="col-md-6 column text-center"> <a name="sampledata"></a>
+          <h1><span class="glyphicon glyphicon-cog"></span>&nbsp;Sample Files</h1>
+        </div>
+        <div class="col-md-6 column">
+          &nbsp;
+        </div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-md-6 column lead">
+          <p>&nbsp;</p>
+          <h3>Atom Files</h3>
+          <p> </p>
+          <ul>
+            <li>Official release from <a href="http://schemas.opengis.net/owc/1.0/examples/" target="_blank">schemas.opengis.net</a></li>
+            <li>Development files from <a href="https://github.com/opengeospatial/owscontext/tree/master/atom/dev/examples" target="_blank">opengeospatial GitHub</a></li>
+          </ul>
+          <h3>JSON Enconding</h3>
+          <p> </p>
+          <ul>
+            <li>Courtesy of <a href="http://www.terradue.com" target="_blank">Terradue</a></li>
+            <li>Developed in <a href="http://www.opengeospatial.org/pub/www/ows10/rfq/index.html" target="_blank">OWS-10</a></li>
+            <li>Available on the <a href="https://github.com/opengeospatial/owscontext/tree/master/json/dev/trax/json">json/dev/trax/json</a></li>
+          </ul>
+        </div>
+
+
+
+        <div data-twttr-id="twttr-sandbox-0" class="col-md-6 column">
+
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/search?q=%23owscontext"  data-widget-id="466276390854070272">Tweets about "#owscontext"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+        </div>
+      </div>
+
+      <p>&nbsp;</p>
+
+      <div class="row clearfix">
+        <div class="col-md-12 column">&nbsp;</div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-md-12 column">&nbsp;</div>
+      </div>
+      <div class="row clearfix">
+        <div class="col-md-12 column">&nbsp;</div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="container">
+        <div class="row clearfix">
+          <div class="col-md-12 column text-center">
+            <p><small>Copyright 2014 Open Geospatial Consortium. Some rights
+                reserved.</small> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<iframe style="display: none;" allowtransparency="true" scrolling="no" id="rufous-sandbox" frameborder="0"></iframe></body></html>
