@@ -8,9 +8,9 @@ For the web site source code files please change the branch to _gh_pages_
 SWG Public Web Site is published at http://www.owscontext.org/
 
 
-The Site is organized as :
+The repository is organized accroding to the following structure :
 
-
+<pre>
 .
 ├── atom
 │   ├── dev
@@ -37,5 +37,5 @@ The Site is organized as :
         ├── specification
         │   └── drafts
         └── tutorials
-        
+</pre>        
         
