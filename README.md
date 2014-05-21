@@ -5,30 +5,17 @@ This repository contains the SWG files and it is organized according to the foll
 
 <pre>
 .
-├── atom
-│   ├── dev
-│   │   └── examples
-│   ├── documents
-│   │   ├── specification
-│   │   └── tutorials
-│   └── schemas
-│       └── examples
 ├── core
 │   └── documents
 │       └── specification
-└── json
+└── [encoding]
     ├── dev
-    │   ├── clients
-    │   │   └── min
-    │   ├── trax
-    │   │   ├── json
-    │   │   ├── tmp
-    │   │   └── xslt
-    │   └── validation
+    │   ├── [name1]
+    │   ├── [name2]
+    │   ├── ...
     └── documents
         ├── reports
         ├── specification
-        │   └── drafts
         └── tutorials
 </pre>        
     
