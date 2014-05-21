@@ -1,5 +1,5 @@
-owscontext
-==========
+OWS Context gh-pages
+====================
 
 This branch contains the Web Site files as published at http://www.owscontext.org/
 
