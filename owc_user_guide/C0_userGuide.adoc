@@ -5,7 +5,7 @@
 :toclevels: 3
 :numbered:
 
-= Testbed-12 ((OWS Context User Guide ))
+= ((OWS Context User Guide ))
 
 Publication Date: 2016-mm-dd
 
