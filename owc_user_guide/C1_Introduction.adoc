@@ -1,0 +1,66 @@
+== Introduction
+
+While over the last 10 years use of open standards compliant geospatial web services such as WMS, WMTS, WFS, WCS and CSW has grown massively, there has not been an effective open standards mechanism to assemble a collection of information such that it can be exchanged easily among a community. While some GIS vendors support such a capability the solution is typically not portable between vendors.  The OGC did develop the Web Map Context standard (05-005) but this only supported WMS and so was relatively limited. The OWS Context Standard (OWC) was developed to allow advanced sharing ofgeospatial ‘Context’ or 'view' between users across a wide range of application types (browser, desktop applications, apps) and technologies (desktop, mobile, embedded etc).  The standard is modular and easily implemented, and supports a wide range of OGC service standards as well as in-line  or local content. 
+
+OWS Context offers a solution to a wide range of sharing requirements. Chapter 1 describes a list of use case examples.  Chapter 2 will provide a detailed description of each of these examples.
+
+=== Usage Example - Shared Situational Awareness
+
+Users in a range of environments have
+access to the central services, but typically wish to collaborate using a range of information. In a collaboration built on for example an emergency response there is typically a wide range of stakeholders and a need to provide them with relevant common information. 
+
+=== Usage Example - Sharing Catalogue Searches
+
+A users wishes to save or exchange the query and results from various catalogue searches to avoid duplication of effort. In this case a user would execute one
+or more searches and retain each search request and possibly results set and be
+able to exchange the search and results set with others so that they could
+review the results or modify and re-execute the search.  
+
+=== Usage Example - Processing Services Management
+
+A user wishes to save and/or exchange the configuration and/or results of an analysis or processing activity. The process to be executed will be stored in the
+context document as well as inline or referenced results. 
+
+ 
+=== Usage Example - Index or Catalogue of Data Collections
+A user wishes to create a collection of datasets, for example OGC GeoPackages which are split geospatially (tiled) and/or based on themes. 
+The OWS Context document can provide a catalogue or inventory of these.
+
+=== Benefits of OWS Context Documents
+
+Some of the key benefits of OWS Context
+are:
+
+*   OWC is
+     open standards compliant allowing sharing between different system
+     technologies.
+*   OWC
+     documents are easily created, exchanged, catalogued and read.  
+*   OWC
+     documents can be encoded in XML/ATOM or GeoJSON. The two formats are interchangable. 
+*   OWC
+     supports not only WMS but a wide range of other OGC Services (CSW, WFS, WCS, WPS, WMTS etc)
+*   OWC Supports inline content in well known encodings such as GML and KML.
+*    OWS Context Documents can reference local files in for example
+     GeoTIFF.
+*   OWC is
+     easily extensible to include new service types, inline content and file
+=      formats (OGC and non-OGC) without the need for a change in the standard. 
+
+An OWS Context Document primarily contains references to information and so is itself relatively small
+in size. It therefore is easy to exchange and access. 
+
+=== Normative References 
+
+The following normative references are used in this document.
+
+1. OGC 12-080r2, OGC OWS Context Conceptual Model, 2013-09-01, https://portal.opengeospatial.org/files/?artifact_id=55182
+
+1. OGC 12-084r2, OGC OWS Context Atom Encoding Standard, 2014-01-14, https://portal.opengeospatial.org/files/?artifact_id=55183 or online at http://docs.opengeospatial.org/is/12-084r2/12-084r2.html
+
+1. OGC 14-055r2, OGC OWS Context GeoJSON Encoding Standard 2016-10-08.
+This document has now been approved as an OGC Standard but has yet to be published to the OGC Standards registry.
+
+1. OGC 15-113r2, OGC CDB Core Standard. This document has now been approved as an OGC Standard but has yet to be published to the OGC Standards registry.
+
+1. GeoRSS Geographically Encoded Objects for RSS Feeds. (http://www.georss.org/)

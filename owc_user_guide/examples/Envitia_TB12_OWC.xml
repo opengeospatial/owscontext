@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss"
+    xmlns:gml="http://www.opengis.net/gml" xmlns:owc="http://www.opengis.net/owc/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2005/Atom ../atom/2005/atom.xsd http://purl.org/dc/elements/1.1/ ../../../csw/2.0.2/rec-dcmes.xsd http://purl.org/dc/elements/1.1/ ../../../csw/2.0.2/rec-dcmes.xsd http://www.georss.org/georss ../georss/1.1/georss.xsd http://www.opengis.net/gml ../georss/1.1/gmlgeorss311.xsd http://www.opengis.net/owc/1.0 ../OWSContextCore.xsd"
+    xmlns:env="http://www.envitia.com/env">
+    <link rel="profile" href="http://www.opengis.net/spec/owc-atom/1.0/req/core"
+        title="This file is compliant with version 1.0 of OWS Context"/>
+    <id>1475248700290</id>
+    <title>Export--2016-09-30T16:18:20</title>
+    <updated>2016-09-30T16:18:20Z</updated>
+    <author>
+        <name>Envitia</name>
+        <email>support@envitia.com</email>
+        <uri>http://www.envitia.com</uri>
+    </author>
+    <georss:where>
+        <gml:Polygon>
+            <gml:exterior>
+                <gml:LinearRing>
+                    <gml:posList srsDimension="2" srsName="EPSG:4326">-23.293116707657
+                        -154.30193347887 94.382556027313 -154.30193347887 94.382556027313
+                        57.363088142915 -23.293116707657 57.363088142915 -23.293116707657
+                        -154.30193347887</gml:posList>
+                </gml:LinearRing>
+            </gml:exterior>
+        </gml:Polygon>
+    </georss:where>
+    <entry>
+        <id>OpenLayers_Layer_Image_135270</id>
+        <title>Intervisibility</title>
+        <updated>2016-09-30T16:18:20Z</updated>
+        <georss:where>
+            <gml:Polygon>
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList srsDimension="2" srsName="EPSG:4326">51.532798732668745
+                            -3.11458080574287 51.644713993337504 -3.11458080574287
+                            51.644713993337504 -2.934917748918966 51.532798732668745
+                            -2.934917748918966 51.532798732668745 -3.11458080574287</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </georss:where>
+        <content type="html">Intervisibility</content>
+        <category term="true" scheme="http://www.opengis.net/owc/active"/>
+        <category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/>
+        <owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wps">
+            <owc:operation code="GetCapabilities" method="GET"
+                href="http://10.68.2.68:11080/MapLinkOGCServices/OGC?REQUEST=GetCapabilities&amp;SERVICE=WPS&amp;VERSION=1.0.0"/>
+            <owc:operation code="Execute" method="POST"
+                href="http://10.68.2.68:11080/MapLinkOGCServices/OGC?">
+                <owc:request type="text/xml">
+                    <wps:Execute service="WPS" version="1.0.0"
+                        xmlns:wps="http://www.opengis.net/wps/1.0.0"
+                        xmlns:ows="http://www.opengis.net/ows/1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 ..\schemas\wps\1.0.0\wps\Execute_request.xsd">
+                        <ows:Identifier>MultiViewShed</ows:Identifier>
+                        <wps:DataInputs>
+                            <wps:Input>
+                                <ows:Identifier>source</ows:Identifier>
+                                <ows:Title>source</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>britsouthlatlon</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>view_htype</ows:Identifier>
+                                <ows:Title>view_htype</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>groundHeight</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>view_maxRadius</ows:Identifier>
+                                <ows:Title>view_maxRadius</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>10000</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>target_height</ows:Identifier>
+                                <ows:Title>target_height</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>0</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>target_htype</ows:Identifier>
+                                <ows:Title>target_htype</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>groundHeight</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>requiredDisplayWidth</ows:Identifier>
+                                <ows:Title>requiredDisplayWidth</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>143</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>requiredDisplayHeight</ows:Identifier>
+                                <ows:Title>requiredDisplayHeight</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>89</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>displayStyle</ows:Identifier>
+                                <ows:Title>displayStyle</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>redGreen</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>viewPoints</ows:Identifier>
+                                <ows:Title>viewPoints</ows:Title>
+                                <wps:Data>
+                                    <wps:LiteralData>&lt;gml:LineString
+                                        srsName=&quot;EPSG:4326&quot;&gt;&lt;gml:posList
+                                        srsDimension=&quot;3&quot;&gt;51.588791004021
+                                        -3.0247492773309 0
+                                        &lt;/gml:posList&gt;&lt;/gml:LineString&gt;</wps:LiteralData>
+                                </wps:Data>
+                            </wps:Input>
+                            <wps:Input>
+                                <ows:Identifier>requiredDisplayExtent</ows:Identifier>
+                                <ows:Title>requiredDisplayExtent</ows:Title>
+                                <wps:Data>
+                                    <wps:BoundingBoxData crs="EPSG:4326">
+                                        <ows:LowerCorner>-3.11458080574287
+                                            51.532798732668745</ows:LowerCorner>
+                                        <ows:UpperCorner>-2.934917748918966
+                                            51.644713993337504</ows:UpperCorner>
+                                    </wps:BoundingBoxData>
+                                </wps:Data>
+                            </wps:Input>
+                        </wps:DataInputs>
+                        <wps:ResponseForm>
+                            <wps:ResponseDocument>
+                                <wps:Output mimeType="image/png" asReference="true">
+                                    <ows:Identifier>image</ows:Identifier>
+                                </wps:Output>
+                            </wps:ResponseDocument>
+                        </wps:ResponseForm>
+                    </wps:Execute>
+                </owc:request>
+            </owc:operation>
+        </owc:offering>
+    </entry>
+    <entry>
+        <id>OpenLayers_Layer_Vector_134151</id>
+        <title>us__countiescountiesType</title>
+        <updated>2016-09-30T16:18:20Z</updated>
+        <georss:where>
+            <gml:Polygon>
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList srsDimension="2" srsName="EPSG:4326">-90 -180 90 -180 90 180
+                            -90 180 -90 -180</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </georss:where>
+        <content type="html">us__countiescountiesType</content>
+        <category term="true" scheme="http://www.opengis.net/owc/active"/>
+        <category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/>
+        <owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wfs">
+            <owc:operation code="GetCapabilities" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wfs?REQUEST=GetCapabilities&amp;SERVICE=WFS"/>
+            <owc:operation code="GetFeature" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wfs?REQUEST=GetFeature&amp;SERVICE=WFS&amp;VERSION=1.0.0&amp;BBOX=-154.30193347887,-23.293116707657,57.363088142915,94.382556027313&amp;NAMESPACES=xmlns(feature,null)&amp;TYPENAME=feature:us__countiescountiesType"
+            />
+        </owc:offering>
+    </entry>
+    <entry>
+        <id>OpenLayers_Layer_WMS_133883</id>
+        <title>us_counties</title>
+        <updated>2016-09-30T16:18:20Z</updated>
+        <georss:where>
+            <gml:Polygon>
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList srsDimension="2" srsName="EPSG:4326">18.924781799316
+                            -178.21502685547 71.406646728516 -178.21502685547 71.406646728516
+                            -66.969848632813 18.924781799316 -66.969848632813 18.924781799316
+                            -178.21502685547</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </georss:where>
+        <content type="html">us_counties</content>
+        <category term="true" scheme="http://www.opengis.net/owc/active"/>
+        <category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/>
+        <owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wms">
+            <owc:operation code="GetCapabilities" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wms?REQUEST=GetCapabilities&amp;SERVICE=WMS"/>
+            <owc:operation code="GetMap" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wms?REQUEST=GetMap&amp;SERVICE=WMS&amp;TRANSPARENT=true&amp;LAYERS=us_counties&amp;FORMAT=image/png&amp;VERSION=1.1.1&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=1680&amp;HEIGHT=934&amp;BBOX=-154.30193347887,-23.293116707657,57.363088142915,94.382556027313"
+            />
+        </owc:offering>
+    </entry>
+    <entry>
+        <id>OpenLayers_Layer_Image_134365</id>
+        <title>BlueMarbleCov</title>
+        <updated>2016-09-30T16:18:20Z</updated>
+        <georss:where>
+            <gml:Polygon>
+                <gml:exterior>
+                    <gml:LinearRing>
+                        <gml:posList srsDimension="2" srsName="EPSG:4326">-90 -180 90 -180 90 180
+                            -90 180 -90 -180</gml:posList>
+                    </gml:LinearRing>
+                </gml:exterior>
+            </gml:Polygon>
+        </georss:where>
+        <content type="html">BlueMarbleCov</content>
+        <category term="true" scheme="http://www.opengis.net/owc/active"/>
+        <category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/>
+        <owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wcs">
+            <owc:operation code="GetCapabilities" method="GET"
+                href="http://ows.rasdaman.org/rasdaman/ows?REQUEST=GetCapabilities&amp;SERVICE=WCS&amp;VERSION=2.0.0"/>
+            <owc:operation code="GetCoverage" method="GET"
+                href="http://ows.rasdaman.org/rasdaman/ows?SCALEFACTOR=10.174297058223718&amp;format=image/png&amp;CoverageId=BlueMarbleCov&amp;request=GetCoverage&amp;version=2.0.0&amp;service=WCS"
+            />
+        </owc:offering>
+    </entry>
+</feed>

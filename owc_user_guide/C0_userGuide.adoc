@@ -1,0 +1,73 @@
+:doctype: book
+:encoding: utf-8
+:lang: en
+:toc: macro
+:toclevels: 3
+:numbered:
+
+= Testbed-12 ((OWS Context User Guide ))
+
+Publication Date: 2016-mm-dd
+
+Approval Date: 2016-mm-dd
+
+Posted Date: 2016-((01-01))
+
+Reference number of this document: OGC 16-((NNNrN))
+
+Reference URL for this document: http://www.opengis.net/doc/PER/t12-((xxx))
+
+Category: User Guide
+
+Editor: ((Roger Brackin))
+
+Title: [big]#Testbed-12 (( OWS Context User Guide ))#
+
+''''
+
+*COPYRIGHT*
+
+Copyright © 2016 Open Geospatial Consortium. To obtain additional rights of use, visit http://www.opengeospatial.org/
+
+
+[IMPORTANT]
+====
+Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights. Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation. 
+
+====
+
+
+[NOTE]
+====
+
+This document is a user guide created as a deliverable in an OGC Interoperability Initiative as a user guide to the work of that initiative and is not an official position of the OGC membership. There may be additional valid approaches beyond what is described in this user guide.
+
+====
+
+''''
+////
+Please provide your details here
+////
+*POINTS OF CONTACT*
+|====================
+|Name |Organization
+|((Roger Brackin)) | (( Envitia ))
+|((contributor)) | ((from org))
+|====================
+''''
+
+////
+your content goes into file content.adoc. You don't need to change anything here
+////
+
+include::C1_Introduction.adoc[]
+
+include::C2_Common_Use_Cases.adoc[]
+
+include::C3_OWS_Context_Structure.adoc[]
+
+include::C4_OWS_Context_For_Users.adoc[]
+
+include::C5_OWS_Context_For_Dev.adoc[]
+
+include::C6_Applications_and_Tools.adoc[]

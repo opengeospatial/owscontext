@@ -1,0 +1,40 @@
+== The OWS Context Document Structure
+
+An OWS Context (OWC) document consists of a number of key elements. These are shown in figure 3.1.
+
+image::images/figure3_1.png[] 
+
+*Figure 3.1 - Structure of OWS Context Document*
+
+The overall information includes a name,
+abstract and creation date as well as a range of high level metadata. It also
+includes an Area of Interest and a time range of interest (all optional). When
+using OWC for visualization the Area of Interest is typically the area
+displayed on screen when the context document is loaded. Similarly the
+time-range of interest is the time range that any time slider in the
+application will be set to. The core of the OWC document is an ordered list of resources.
+Again for visualization purposes the application should load the resources in
+the list such that the first resource is at the top (i.e. reverse draw
+order).  
+
+Each layer in a context document is known as a ‘Resource’ which in the Atom encoding is mapped to a ‘Entry’ XML element. In reality a resource can be realised in a number of
+different ways, and so an OWC document allows various options to be specified.
+These are known as offerings. The intention is that these are, as far as is
+possible by the format used, equivalent and no priority is assigned to their
+order in the standard. They are intended to be alternatives that the client can
+use to allow it to visualise or use the resource. This structure is shown in Figure 3.2.
+
+image::images/figure3_2.png[]
+
+*Figure 3.2 - OWS Context Document Offering*
+
+An example of two equivalent offerings is a WMS for a resource and then a WMTS request retrieving equivalent data. The client can read either and be reasonably certain that the result presented to
+the user is the same.  Another example is
+a resource which might offer a WFS and also in-line GML which is the equivalent
+of the request. 
+
+There are two types of offering, service
+offerings and data offerings. A service offering has a service request (in the
+form of a capabilities request and a data request) and optional content and
+styling elements. A data offering has a content element and optional styling
+elements.

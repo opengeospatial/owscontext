@@ -1,0 +1,2828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.5.dev">
+<title>Testbed-12 OWS Context User Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
+<style>
+/* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
+/* Remove comment around @import statement below when using as a custom stylesheet */
+/*@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";*/
+article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
+audio,canvas,video{display:inline-block}
+audio:not([controls]){display:none;height:0}
+[hidden],template{display:none}
+script{display:none!important}
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{margin:0}
+a{background:transparent}
+a:focus{outline:thin dotted}
+a:active,a:hover{outline:0}
+h1{font-size:2em;margin:.67em 0}
+abbr[title]{border-bottom:1px dotted}
+b,strong{font-weight:bold}
+dfn{font-style:italic}
+hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}
+mark{background:#ff0;color:#000}
+code,kbd,pre,samp{font-family:monospace;font-size:1em}
+pre{white-space:pre-wrap}
+q{quotes:"\201C" "\201D" "\2018" "\2019"}
+small{font-size:80%}
+sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}
+sup{top:-.5em}
+sub{bottom:-.25em}
+img{border:0}
+svg:not(:root){overflow:hidden}
+figure{margin:0}
+fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}
+legend{border:0;padding:0}
+button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}
+button,input{line-height:normal}
+button,select{text-transform:none}
+button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}
+button[disabled],html input[disabled]{cursor:default}
+input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}
+input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
+input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
+button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
+textarea{overflow:auto;vertical-align:top}
+table{border-collapse:collapse;border-spacing:0}
+*,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box}
+html,body{font-size:100%}
+body{background:#fff;color:rgba(0,0,0,.8);padding:0;margin:0;font-family:"Noto Serif","DejaVu Serif",serif;font-weight:400;font-style:normal;line-height:1;position:relative;cursor:auto}
+a:hover{cursor:pointer}
+img,object,embed{max-width:100%;height:auto}
+object,embed{height:100%}
+img{-ms-interpolation-mode:bicubic}
+.left{float:left!important}
+.right{float:right!important}
+.text-left{text-align:left!important}
+.text-right{text-align:right!important}
+.text-center{text-align:center!important}
+.text-justify{text-align:justify!important}
+.hide{display:none}
+body{-webkit-font-smoothing:antialiased}
+img,object,svg{display:inline-block;vertical-align:middle}
+textarea{height:auto;min-height:50px}
+select{width:100%}
+.center{margin-left:auto;margin-right:auto}
+.spread{width:100%}
+p.lead,.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{font-size:1.21875em;line-height:1.6}
+.subheader,.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{line-height:1.45;color:#7a2518;font-weight:400;margin-top:0;margin-bottom:.25em}
+div,dl,dt,dd,ul,ol,li,h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6,pre,form,p,blockquote,th,td{margin:0;padding:0;direction:ltr}
+a{color:#2156a5;text-decoration:underline;line-height:inherit}
+a:hover,a:focus{color:#1d4b8f}
+a img{border:none}
+p{font-family:inherit;font-weight:400;font-size:1em;line-height:1.6;margin-bottom:1.25em;text-rendering:optimizeLegibility}
+p aside{font-size:.875em;line-height:1.35;font-style:italic}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{font-family:"Open Sans","DejaVu Sans",sans-serif;font-weight:300;font-style:normal;color:#ba3925;text-rendering:optimizeLegibility;margin-top:1em;margin-bottom:.5em;line-height:1.0125em}
+h1 small,h2 small,h3 small,#toctitle small,.sidebarblock>.content>.title small,h4 small,h5 small,h6 small{font-size:60%;color:#e99b8f;line-height:0}
+h1{font-size:2.125em}
+h2{font-size:1.6875em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.375em}
+h4,h5{font-size:1.125em}
+h6{font-size:1em}
+hr{border:solid #ddddd8;border-width:1px 0 0;clear:both;margin:1.25em 0 1.1875em;height:0}
+em,i{font-style:italic;line-height:inherit}
+strong,b{font-weight:bold;line-height:inherit}
+small{font-size:60%;line-height:inherit}
+code{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;color:rgba(0,0,0,.9)}
+ul,ol,dl{font-size:1em;line-height:1.6;margin-bottom:1.25em;list-style-position:outside;font-family:inherit}
+ul,ol,ul.no-bullet,ol.no-bullet{margin-left:1.5em}
+ul li ul,ul li ol{margin-left:1.25em;margin-bottom:0;font-size:1em}
+ul.square li ul,ul.circle li ul,ul.disc li ul{list-style:inherit}
+ul.square{list-style-type:square}
+ul.circle{list-style-type:circle}
+ul.disc{list-style-type:disc}
+ul.no-bullet{list-style:none}
+ol li ul,ol li ol{margin-left:1.25em;margin-bottom:0}
+dl dt{margin-bottom:.3125em;font-weight:bold}
+dl dd{margin-bottom:1.25em}
+abbr,acronym{text-transform:uppercase;font-size:90%;color:rgba(0,0,0,.8);border-bottom:1px dotted #ddd;cursor:help}
+abbr{text-transform:none}
+blockquote{margin:0 0 1.25em;padding:.5625em 1.25em 0 1.1875em;border-left:1px solid #ddd}
+blockquote cite{display:block;font-size:.9375em;color:rgba(0,0,0,.6)}
+blockquote cite:before{content:"\2014 \0020"}
+blockquote cite a,blockquote cite a:visited{color:rgba(0,0,0,.6)}
+blockquote,blockquote p{line-height:1.6;color:rgba(0,0,0,.85)}
+@media only screen and (min-width:768px){h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2}
+h1{font-size:2.75em}
+h2{font-size:2.3125em}
+h3,#toctitle,.sidebarblock>.content>.title{font-size:1.6875em}
+h4{font-size:1.4375em}}
+table{background:#fff;margin-bottom:1.25em;border:solid 1px #dedede}
+table thead,table tfoot{background:#f7f8f7;font-weight:bold}
+table thead tr th,table thead tr td,table tfoot tr th,table tfoot tr td{padding:.5em .625em .625em;font-size:inherit;color:rgba(0,0,0,.8);text-align:left}
+table tr th,table tr td{padding:.5625em .625em;font-size:inherit;color:rgba(0,0,0,.8)}
+table tr.even,table tr.alt,table tr:nth-of-type(even){background:#f8f8f7}
+table thead tr th,table tfoot tr th,table tbody tr td,table tr td,table tfoot tr td{display:table-cell;line-height:1.6}
+body{tab-size:4}
+h1,h2,h3,#toctitle,.sidebarblock>.content>.title,h4,h5,h6{line-height:1.2;word-spacing:-.05em}
+h1 strong,h2 strong,h3 strong,#toctitle strong,.sidebarblock>.content>.title strong,h4 strong,h5 strong,h6 strong{font-weight:400}
+.clearfix:before,.clearfix:after,.float-group:before,.float-group:after{content:" ";display:table}
+.clearfix:after,.float-group:after{clear:both}
+*:not(pre)>code{font-size:.9375em;font-style:normal!important;letter-spacing:0;padding:.1em .5ex;word-spacing:-.15em;background-color:#f7f7f8;-webkit-border-radius:4px;border-radius:4px;line-height:1.45;text-rendering:optimizeSpeed}
+pre,pre>code{line-height:1.45;color:rgba(0,0,0,.9);font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;font-weight:400;text-rendering:optimizeSpeed}
+.keyseq{color:rgba(51,51,51,.8)}
+kbd{font-family:"Droid Sans Mono","DejaVu Sans Mono",monospace;display:inline-block;color:rgba(0,0,0,.8);font-size:.65em;line-height:1.45;background-color:#f7f7f7;border:1px solid #ccc;-webkit-border-radius:3px;border-radius:3px;-webkit-box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em white inset;box-shadow:0 1px 0 rgba(0,0,0,.2),0 0 0 .1em #fff inset;margin:0 .15em;padding:.2em .5em;vertical-align:middle;position:relative;top:-.1em;white-space:nowrap}
+.keyseq kbd:first-child{margin-left:0}
+.keyseq kbd:last-child{margin-right:0}
+.menuseq,.menu{color:rgba(0,0,0,.8)}
+b.button:before,b.button:after{position:relative;top:-1px;font-weight:400}
+b.button:before{content:"[";padding:0 3px 0 2px}
+b.button:after{content:"]";padding:0 2px 0 3px}
+p a>code:hover{color:rgba(0,0,0,.9)}
+#header,#content,#footnotes,#footer{width:100%;margin-left:auto;margin-right:auto;margin-top:0;margin-bottom:0;max-width:62.5em;*zoom:1;position:relative;padding-left:.9375em;padding-right:.9375em}
+#header:before,#header:after,#content:before,#content:after,#footnotes:before,#footnotes:after,#footer:before,#footer:after{content:" ";display:table}
+#header:after,#content:after,#footnotes:after,#footer:after{clear:both}
+#content{margin-top:1.25em}
+#content:before{content:none}
+#header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
+#header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #ddddd8}
+#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #ddddd8;padding-bottom:8px}
+#header .details{border-bottom:1px solid #ddddd8;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:-ms-flexbox;display:-webkit-flex;display:flex;-ms-flex-flow:row wrap;-webkit-flex-flow:row wrap;flex-flow:row wrap}
+#header .details span:first-child{margin-left:-.125em}
+#header .details span.email a{color:rgba(0,0,0,.85)}
+#header .details br{display:none}
+#header .details br+span:before{content:"\00a0\2013\00a0"}
+#header .details br+span.author:before{content:"\00a0\22c5\00a0";color:rgba(0,0,0,.85)}
+#header .details br+span#revremark:before{content:"\00a0|\00a0"}
+#header #revnumber{text-transform:capitalize}
+#header #revnumber:after{content:"\00a0"}
+#content>h1:first-child:not([class]){color:rgba(0,0,0,.85);border-bottom:1px solid #ddddd8;padding-bottom:8px;margin-top:0;padding-top:1rem;margin-bottom:1.25rem}
+#toc{border-bottom:1px solid #efefed;padding-bottom:.5em}
+#toc>ul{margin-left:.125em}
+#toc ul.sectlevel0>li>a{font-style:italic}
+#toc ul.sectlevel0 ul.sectlevel1{margin:.5em 0}
+#toc ul{font-family:"Open Sans","DejaVu Sans",sans-serif;list-style-type:none}
+#toc li{line-height:1.3334;margin-top:.3334em}
+#toc a{text-decoration:none}
+#toc a:active{text-decoration:underline}
+#toctitle{color:#7a2518;font-size:1.2em}
+@media only screen and (min-width:768px){#toctitle{font-size:1.375em}
+body.toc2{padding-left:15em;padding-right:0}
+#toc.toc2{margin-top:0!important;background-color:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #efefed;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
+#toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
+#toc.toc2>ul{font-size:.9em;margin-bottom:0}
+#toc.toc2 ul ul{margin-left:0;padding-left:1em}
+#toc.toc2 ul.sectlevel0 ul.sectlevel1{padding-left:0;margin-top:.5em;margin-bottom:.5em}
+body.toc2.toc-right{padding-left:0;padding-right:15em}
+body.toc2.toc-right #toc.toc2{border-right-width:0;border-left:1px solid #efefed;left:auto;right:0}}
+@media only screen and (min-width:1280px){body.toc2{padding-left:20em;padding-right:0}
+#toc.toc2{width:20em}
+#toc.toc2 #toctitle{font-size:1.375em}
+#toc.toc2>ul{font-size:.95em}
+#toc.toc2 ul ul{padding-left:1.25em}
+body.toc2.toc-right{padding-left:0;padding-right:20em}}
+#content #toc{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+#content #toc>:first-child{margin-top:0}
+#content #toc>:last-child{margin-bottom:0}
+#footer{max-width:100%;background-color:rgba(0,0,0,.8);padding:1.25em}
+#footer-text{color:rgba(255,255,255,.8);line-height:1.44}
+.sect1{padding-bottom:.625em}
+@media only screen and (min-width:768px){.sect1{padding-bottom:1.25em}}
+.sect1+.sect1{border-top:1px solid #efefed}
+#content h1>a.anchor,h2>a.anchor,h3>a.anchor,#toctitle>a.anchor,.sidebarblock>.content>.title>a.anchor,h4>a.anchor,h5>a.anchor,h6>a.anchor{position:absolute;z-index:1001;width:1.5ex;margin-left:-1.5ex;display:block;text-decoration:none!important;visibility:hidden;text-align:center;font-weight:400}
+#content h1>a.anchor:before,h2>a.anchor:before,h3>a.anchor:before,#toctitle>a.anchor:before,.sidebarblock>.content>.title>a.anchor:before,h4>a.anchor:before,h5>a.anchor:before,h6>a.anchor:before{content:"\00A7";font-size:.85em;display:block;padding-top:.1em}
+#content h1:hover>a.anchor,#content h1>a.anchor:hover,h2:hover>a.anchor,h2>a.anchor:hover,h3:hover>a.anchor,#toctitle:hover>a.anchor,.sidebarblock>.content>.title:hover>a.anchor,h3>a.anchor:hover,#toctitle>a.anchor:hover,.sidebarblock>.content>.title>a.anchor:hover,h4:hover>a.anchor,h4>a.anchor:hover,h5:hover>a.anchor,h5>a.anchor:hover,h6:hover>a.anchor,h6>a.anchor:hover{visibility:visible}
+#content h1>a.link,h2>a.link,h3>a.link,#toctitle>a.link,.sidebarblock>.content>.title>a.link,h4>a.link,h5>a.link,h6>a.link{color:#ba3925;text-decoration:none}
+#content h1>a.link:hover,h2>a.link:hover,h3>a.link:hover,#toctitle>a.link:hover,.sidebarblock>.content>.title>a.link:hover,h4>a.link:hover,h5>a.link:hover,h6>a.link:hover{color:#a53221}
+.audioblock,.imageblock,.literalblock,.listingblock,.stemblock,.videoblock{margin-bottom:1.25em}
+.admonitionblock td.content>.title,.audioblock>.title,.exampleblock>.title,.imageblock>.title,.listingblock>.title,.literalblock>.title,.stemblock>.title,.openblock>.title,.paragraph>.title,.quoteblock>.title,table.tableblock>.title,.verseblock>.title,.videoblock>.title,.dlist>.title,.olist>.title,.ulist>.title,.qlist>.title,.hdlist>.title{text-rendering:optimizeLegibility;text-align:left;font-family:"Noto Serif","DejaVu Serif",serif;font-size:1rem;font-style:italic}
+table.tableblock>caption.title{white-space:nowrap;overflow:visible;max-width:0}
+.paragraph.lead>p,#preamble>.sectionbody>.paragraph:first-of-type p{color:rgba(0,0,0,.85)}
+table.tableblock #preamble>.sectionbody>.paragraph:first-of-type p{font-size:inherit}
+.admonitionblock>table{border-collapse:separate;border:0;background:none;width:100%}
+.admonitionblock>table td.icon{text-align:center;width:80px}
+.admonitionblock>table td.icon img{max-width:none}
+.admonitionblock>table td.icon .title{font-weight:bold;font-family:"Open Sans","DejaVu Sans",sans-serif;text-transform:uppercase}
+.admonitionblock>table td.content{padding-left:1.125em;padding-right:1.25em;border-left:1px solid #ddddd8;color:rgba(0,0,0,.6)}
+.admonitionblock>table td.content>:last-child>:last-child{margin-bottom:0}
+.exampleblock>.content{border-style:solid;border-width:1px;border-color:#e6e6e6;margin-bottom:1.25em;padding:1.25em;background:#fff;-webkit-border-radius:4px;border-radius:4px}
+.exampleblock>.content>:first-child{margin-top:0}
+.exampleblock>.content>:last-child{margin-bottom:0}
+.sidebarblock{border-style:solid;border-width:1px;border-color:#e0e0dc;margin-bottom:1.25em;padding:1.25em;background:#f8f8f7;-webkit-border-radius:4px;border-radius:4px}
+.sidebarblock>:first-child{margin-top:0}
+.sidebarblock>:last-child{margin-bottom:0}
+.sidebarblock>.content>.title{color:#7a2518;margin-top:0;text-align:center}
+.exampleblock>.content>:last-child>:last-child,.exampleblock>.content .olist>ol>li:last-child>:last-child,.exampleblock>.content .ulist>ul>li:last-child>:last-child,.exampleblock>.content .qlist>ol>li:last-child>:last-child,.sidebarblock>.content>:last-child>:last-child,.sidebarblock>.content .olist>ol>li:last-child>:last-child,.sidebarblock>.content .ulist>ul>li:last-child>:last-child,.sidebarblock>.content .qlist>ol>li:last-child>:last-child{margin-bottom:0}
+.literalblock pre,.listingblock pre:not(.highlight),.listingblock pre[class="highlight"],.listingblock pre[class^="highlight "],.listingblock pre.CodeRay,.listingblock pre.prettyprint{background:#f7f7f8}
+.sidebarblock .literalblock pre,.sidebarblock .listingblock pre:not(.highlight),.sidebarblock .listingblock pre[class="highlight"],.sidebarblock .listingblock pre[class^="highlight "],.sidebarblock .listingblock pre.CodeRay,.sidebarblock .listingblock pre.prettyprint{background:#f2f1f1}
+.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{-webkit-border-radius:4px;border-radius:4px;word-wrap:break-word;padding:1em;font-size:.8125em}
+.literalblock pre.nowrap,.literalblock pre[class].nowrap,.listingblock pre.nowrap,.listingblock pre[class].nowrap{overflow-x:auto;white-space:pre;word-wrap:normal}
+@media only screen and (min-width:768px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:.90625em}}
+@media only screen and (min-width:1280px){.literalblock pre,.literalblock pre[class],.listingblock pre,.listingblock pre[class]{font-size:1em}}
+.literalblock.output pre{color:#f7f7f8;background-color:rgba(0,0,0,.9)}
+.listingblock pre.highlightjs{padding:0}
+.listingblock pre.highlightjs>code{padding:1em;-webkit-border-radius:4px;border-radius:4px}
+.listingblock pre.prettyprint{border-width:0}
+.listingblock>.content{position:relative}
+.listingblock code[data-lang]:before{display:none;content:attr(data-lang);position:absolute;font-size:.75em;top:.425rem;right:.5rem;line-height:1;text-transform:uppercase;color:#999}
+.listingblock:hover code[data-lang]:before{display:block}
+.listingblock.terminal pre .command:before{content:attr(data-prompt);padding-right:.5em;color:#999}
+.listingblock.terminal pre .command:not([data-prompt]):before{content:"$"}
+table.pyhltable{border-collapse:separate;border:0;margin-bottom:0;background:none}
+table.pyhltable td{vertical-align:top;padding-top:0;padding-bottom:0;line-height:1.45}
+table.pyhltable td.code{padding-left:.75em;padding-right:0}
+pre.pygments .lineno,table.pyhltable td:not(.code){color:#999;padding-left:0;padding-right:.5em;border-right:1px solid #ddddd8}
+pre.pygments .lineno{display:inline-block;margin-right:.25em}
+table.pyhltable .linenodiv{background:none!important;padding-right:0!important}
+.quoteblock{margin:0 1em 1.25em 1.5em;display:table}
+.quoteblock>.title{margin-left:-1.5em;margin-bottom:.75em}
+.quoteblock blockquote,.quoteblock blockquote p{color:rgba(0,0,0,.85);font-size:1.15rem;line-height:1.75;word-spacing:.1em;letter-spacing:0;font-style:italic;text-align:justify}
+.quoteblock blockquote{margin:0;padding:0;border:0}
+.quoteblock blockquote:before{content:"\201c";float:left;font-size:2.75em;font-weight:bold;line-height:.6em;margin-left:-.6em;color:#7a2518;text-shadow:0 1px 2px rgba(0,0,0,.1)}
+.quoteblock blockquote>.paragraph:last-child p{margin-bottom:0}
+.quoteblock .attribution{margin-top:.5em;margin-right:.5ex;text-align:right}
+.quoteblock .quoteblock{margin-left:0;margin-right:0;padding:.5em 0;border-left:3px solid rgba(0,0,0,.6)}
+.quoteblock .quoteblock blockquote{padding:0 0 0 .75em}
+.quoteblock .quoteblock blockquote:before{display:none}
+.verseblock{margin:0 1em 1.25em 1em}
+.verseblock pre{font-family:"Open Sans","DejaVu Sans",sans;font-size:1.15rem;color:rgba(0,0,0,.85);font-weight:300;text-rendering:optimizeLegibility}
+.verseblock pre strong{font-weight:400}
+.verseblock .attribution{margin-top:1.25rem;margin-left:.5ex}
+.quoteblock .attribution,.verseblock .attribution{font-size:.9375em;line-height:1.45;font-style:italic}
+.quoteblock .attribution br,.verseblock .attribution br{display:none}
+.quoteblock .attribution cite,.verseblock .attribution cite{display:block;letter-spacing:-.025em;color:rgba(0,0,0,.6)}
+.quoteblock.abstract{margin:0 0 1.25em 0;display:block}
+.quoteblock.abstract blockquote,.quoteblock.abstract blockquote p{text-align:left;word-spacing:0}
+.quoteblock.abstract blockquote:before,.quoteblock.abstract blockquote p:first-of-type:before{display:none}
+table.tableblock{max-width:100%;border-collapse:separate}
+table.tableblock td>.paragraph:last-child p>p:last-child,table.tableblock th>p:last-child,table.tableblock td>p:last-child{margin-bottom:0}
+table.tableblock,th.tableblock,td.tableblock{border:0 solid #dedede}
+table.grid-all th.tableblock,table.grid-all td.tableblock{border-width:0 1px 1px 0}
+table.grid-all tfoot>tr>th.tableblock,table.grid-all tfoot>tr>td.tableblock{border-width:1px 1px 0 0}
+table.grid-cols th.tableblock,table.grid-cols td.tableblock{border-width:0 1px 0 0}
+table.grid-all *>tr>.tableblock:last-child,table.grid-cols *>tr>.tableblock:last-child{border-right-width:0}
+table.grid-rows th.tableblock,table.grid-rows td.tableblock{border-width:0 0 1px 0}
+table.grid-all tbody>tr:last-child>th.tableblock,table.grid-all tbody>tr:last-child>td.tableblock,table.grid-all thead:last-child>tr>th.tableblock,table.grid-rows tbody>tr:last-child>th.tableblock,table.grid-rows tbody>tr:last-child>td.tableblock,table.grid-rows thead:last-child>tr>th.tableblock{border-bottom-width:0}
+table.grid-rows tfoot>tr>th.tableblock,table.grid-rows tfoot>tr>td.tableblock{border-width:1px 0 0 0}
+table.frame-all{border-width:1px}
+table.frame-sides{border-width:0 1px}
+table.frame-topbot{border-width:1px 0}
+th.halign-left,td.halign-left{text-align:left}
+th.halign-right,td.halign-right{text-align:right}
+th.halign-center,td.halign-center{text-align:center}
+th.valign-top,td.valign-top{vertical-align:top}
+th.valign-bottom,td.valign-bottom{vertical-align:bottom}
+th.valign-middle,td.valign-middle{vertical-align:middle}
+table thead th,table tfoot th{font-weight:bold}
+tbody tr th{display:table-cell;line-height:1.6;background:#f7f8f7}
+tbody tr th,tbody tr th p,tfoot tr th,tfoot tr th p{color:rgba(0,0,0,.8);font-weight:bold}
+p.tableblock>code:only-child{background:none;padding:0}
+p.tableblock{font-size:1em}
+td>div.verse{white-space:pre}
+ol{margin-left:1.75em}
+ul li ol{margin-left:1.5em}
+dl dd{margin-left:1.125em}
+dl dd:last-child,dl dd:last-child>:last-child{margin-bottom:0}
+ol>li p,ul>li p,ul dd,ol dd,.olist .olist,.ulist .ulist,.ulist .olist,.olist .ulist{margin-bottom:.625em}
+ul.unstyled,ol.unnumbered,ul.checklist,ul.none{list-style-type:none}
+ul.unstyled,ol.unnumbered,ul.checklist{margin-left:.625em}
+ul.checklist li>p:first-child>.fa-square-o:first-child,ul.checklist li>p:first-child>.fa-check-square-o:first-child{width:1em;font-size:.85em}
+ul.checklist li>p:first-child>input[type="checkbox"]:first-child{width:1em;position:relative;top:1px}
+ul.inline{margin:0 auto .625em auto;margin-left:-1.375em;margin-right:0;padding:0;list-style:none;overflow:hidden}
+ul.inline>li{list-style:none;float:left;margin-left:1.375em;display:block}
+ul.inline>li>*{display:block}
+.unstyled dl dt{font-weight:400;font-style:normal}
+ol.arabic{list-style-type:decimal}
+ol.decimal{list-style-type:decimal-leading-zero}
+ol.loweralpha{list-style-type:lower-alpha}
+ol.upperalpha{list-style-type:upper-alpha}
+ol.lowerroman{list-style-type:lower-roman}
+ol.upperroman{list-style-type:upper-roman}
+ol.lowergreek{list-style-type:lower-greek}
+.hdlist>table,.colist>table{border:0;background:none}
+.hdlist>table>tbody>tr,.colist>table>tbody>tr{background:none}
+td.hdlist1,td.hdlist2{vertical-align:top;padding:0 .625em}
+td.hdlist1{font-weight:bold;padding-bottom:1.25em}
+.literalblock+.colist,.listingblock+.colist{margin-top:-.5em}
+.colist>table tr>td:first-of-type{padding:0 .75em;line-height:1}
+.colist>table tr>td:last-of-type{padding:.25em 0}
+.thumb,.th{line-height:0;display:inline-block;border:solid 4px #fff;-webkit-box-shadow:0 0 0 1px #ddd;box-shadow:0 0 0 1px #ddd}
+.imageblock.left,.imageblock[style*="float: left"]{margin:.25em .625em 1.25em 0}
+.imageblock.right,.imageblock[style*="float: right"]{margin:.25em 0 1.25em .625em}
+.imageblock>.title{margin-bottom:0}
+.imageblock.thumb,.imageblock.th{border-width:6px}
+.imageblock.thumb>.title,.imageblock.th>.title{padding:0 .125em}
+.image.left,.image.right{margin-top:.25em;margin-bottom:.25em;display:inline-block;line-height:0}
+.image.left{margin-right:.625em}
+.image.right{margin-left:.625em}
+a.image{text-decoration:none;display:inline-block}
+a.image object{pointer-events:none}
+sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
+sup.footnote a,sup.footnoteref a{text-decoration:none}
+sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+#footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
+#footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em 0;border-width:1px 0 0 0}
+#footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;text-indent:-1.05em;margin-bottom:.2em}
+#footnotes .footnote a:first-of-type{font-weight:bold;text-decoration:none}
+#footnotes .footnote:last-of-type{margin-bottom:0}
+#content #footnotes{margin-top:-.625em;margin-bottom:0;padding:.75em 0}
+.gist .file-data>table{border:0;background:#fff;width:100%;margin-bottom:0}
+.gist .file-data>table td.line-data{width:99%}
+div.unbreakable{page-break-inside:avoid}
+.big{font-size:larger}
+.small{font-size:smaller}
+.underline{text-decoration:underline}
+.overline{text-decoration:overline}
+.line-through{text-decoration:line-through}
+.aqua{color:#00bfbf}
+.aqua-background{background-color:#00fafa}
+.black{color:#000}
+.black-background{background-color:#000}
+.blue{color:#0000bf}
+.blue-background{background-color:#0000fa}
+.fuchsia{color:#bf00bf}
+.fuchsia-background{background-color:#fa00fa}
+.gray{color:#606060}
+.gray-background{background-color:#7d7d7d}
+.green{color:#006000}
+.green-background{background-color:#007d00}
+.lime{color:#00bf00}
+.lime-background{background-color:#00fa00}
+.maroon{color:#600000}
+.maroon-background{background-color:#7d0000}
+.navy{color:#000060}
+.navy-background{background-color:#00007d}
+.olive{color:#606000}
+.olive-background{background-color:#7d7d00}
+.purple{color:#600060}
+.purple-background{background-color:#7d007d}
+.red{color:#bf0000}
+.red-background{background-color:#fa0000}
+.silver{color:#909090}
+.silver-background{background-color:#bcbcbc}
+.teal{color:#006060}
+.teal-background{background-color:#007d7d}
+.white{color:#bfbfbf}
+.white-background{background-color:#fafafa}
+.yellow{color:#bfbf00}
+.yellow-background{background-color:#fafa00}
+span.icon>.fa{cursor:default}
+.admonitionblock td.icon [class^="fa icon-"]{font-size:2.5em;text-shadow:1px 1px 2px rgba(0,0,0,.5);cursor:default}
+.admonitionblock td.icon .icon-note:before{content:"\f05a";color:#19407c}
+.admonitionblock td.icon .icon-tip:before{content:"\f0eb";text-shadow:1px 1px 2px rgba(155,155,0,.8);color:#111}
+.admonitionblock td.icon .icon-warning:before{content:"\f071";color:#bf6900}
+.admonitionblock td.icon .icon-caution:before{content:"\f06d";color:#bf3400}
+.admonitionblock td.icon .icon-important:before{content:"\f06a";color:#bf0000}
+.conum[data-value]{display:inline-block;color:#fff!important;background-color:rgba(0,0,0,.8);-webkit-border-radius:100px;border-radius:100px;text-align:center;font-size:.75em;width:1.67em;height:1.67em;line-height:1.67em;font-family:"Open Sans","DejaVu Sans",sans-serif;font-style:normal;font-weight:bold}
+.conum[data-value] *{color:#fff!important}
+.conum[data-value]+b{display:none}
+.conum[data-value]:after{content:attr(data-value)}
+pre .conum[data-value]{position:relative;top:-.125em}
+b.conum *{color:inherit!important}
+.conum:not([data-value]):empty{display:none}
+dt,th.tableblock,td.content,div.footnote{text-rendering:optimizeLegibility}
+h1,h2,p,td.content,span.alt{letter-spacing:-.01em}
+p strong,td.content strong,div.footnote strong{letter-spacing:-.005em}
+p,blockquote,dt,td.content,span.alt{font-size:1.0625rem}
+p{margin-bottom:1.25rem}
+.sidebarblock p,.sidebarblock dt,.sidebarblock td.content,p.tableblock{font-size:1em}
+.exampleblock>.content{background-color:#fffef7;border-color:#e0e0dc;-webkit-box-shadow:0 1px 4px #e0e0dc;box-shadow:0 1px 4px #e0e0dc}
+.print-only{display:none!important}
+@media print{@page{margin:1.25cm .75cm}
+*{-webkit-box-shadow:none!important;box-shadow:none!important;text-shadow:none!important}
+a{color:inherit!important;text-decoration:underline!important}
+a.bare,a[href^="#"],a[href^="mailto:"]{text-decoration:none!important}
+a[href^="http:"]:not(.bare):after,a[href^="https:"]:not(.bare):after{content:"(" attr(href) ")";display:inline-block;font-size:.875em;padding-left:.25em}
+abbr[title]:after{content:" (" attr(title) ")"}
+pre,blockquote,tr,img,object,svg{page-break-inside:avoid}
+thead{display:table-header-group}
+svg{max-width:100%}
+p,blockquote,dt,td.content{font-size:1em;orphans:3;widows:3}
+h2,h3,#toctitle,.sidebarblock>.content>.title{page-break-after:avoid}
+#toc,.sidebarblock,.exampleblock>.content{background:none!important}
+#toc{border-bottom:1px solid #ddddd8!important;padding-bottom:0!important}
+.sect1{padding-bottom:0!important}
+.sect1+.sect1{border:0!important}
+#header>h1:first-child{margin-top:1.25rem}
+body.book #header{text-align:center}
+body.book #header>h1:first-child{border:0!important;margin:2.5em 0 1em 0}
+body.book #header .details{border:0!important;display:block;padding:0!important}
+body.book #header .details span:first-child{margin-left:0!important}
+body.book #header .details br{display:block}
+body.book #header .details br+span:before{content:none!important}
+body.book #toc{border:0!important;text-align:left!important;padding:0!important;margin:0!important}
+body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-break-before:always}
+.listingblock code[data-lang]:before{display:block}
+#footer{background:none!important;padding:0 .9375em}
+#footer-text{color:rgba(0,0,0,.6)!important;font-size:.9em}
+.hide-on-print{display:none!important}
+.print-only{display:block!important}
+.hide-for-print{display:none!important}
+.show-for-print{display:inherit!important}}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+</head>
+<body class="book">
+<div id="header">
+<h1>Testbed-12 OWS Context User Guide</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Publication Date: 2016-mm-dd</p>
+</div>
+<div class="paragraph">
+<p>Approval Date: 2016-mm-dd</p>
+</div>
+<div class="paragraph">
+<p>Posted Date: 2016-01-01</p>
+</div>
+<div class="paragraph">
+<p>Reference number of this document: OGC 16-NNNrN</p>
+</div>
+<div class="paragraph">
+<p>Reference URL for this document: <a href="http://www.opengis.net/doc/PER/t12-xxx" class="bare">http://www.opengis.net/doc/PER/t12-xxx</a></p>
+</div>
+<div class="paragraph">
+<p>Category: User Guide</p>
+</div>
+<div class="paragraph">
+<p>Editor: Roger Brackin</p>
+</div>
+<div class="paragraph">
+<p>Title: <span class="big">Testbed-12 OWS Context User Guide</span></p>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>COPYRIGHT</strong></p>
+</div>
+<div class="paragraph">
+<p>Copyright © 2016 Open Geospatial Consortium. To obtain additional rights of use, visit <a href="http://www.opengeospatial.org/" class="bare">http://www.opengeospatial.org/</a></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Attention is drawn to the possibility that some of the elements of this document may be the subject of patent rights. The Open Geospatial Consortium shall not be held responsible for identifying any or all such patent rights. Recipients of this document are requested to submit, with their comments, notification of any relevant patent claims or other intellectual property rights of which they may be aware that might be infringed by any implementation of the standard set forth in this document, and to provide supporting documentation.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This document is a user guide created as a deliverable in an OGC Interoperability Initiative as a user guide to the work of that initiative and is not an official position of the OGC membership. There may be additional valid approaches beyond what is described in this user guide.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<hr>
+<div class="paragraph">
+<p><strong>POINTS OF CONTACT</strong></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Organization</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Roger Brackin</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Envitia</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contributor</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">from org</p></td>
+</tr>
+</tbody>
+</table>
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueintroduction"><a class="anchor" href="#trueintroduction"></a>1. Introduction</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>While over the last 10 years use of open standards compliant geospatial web services such as WMS, WMTS, WFS, WCS and CSW has grown massively, there has not been an effective open standards mechanism to assemble a collection of information such that it can be exchanged easily among a community. While some GIS vendors support such a capability the solution is typically not portable between vendors.  The OGC did develop the Web Map Context standard (05-005) but this only supported WMS and so was relatively limited. The OWS Context Standard (OWC) was developed to allow advanced sharing ofgeospatial ‘Context’ or 'view' between users across a wide range of application types (browser, desktop applications, apps) and technologies (desktop, mobile, embedded etc).  The standard is modular and easily implemented, and supports a wide range of OGC service standards as well as in-line  or local content.</p>
+</div>
+<div class="paragraph">
+<p>OWS Context offers a solution to a wide range of sharing requirements. Chapter 1 describes a list of use case examples.  Chapter 2 will provide a detailed description of each of these examples.</p>
+</div>
+<div class="sect2">
+<h3 id="trueusage-example-shared-situational-awareness"><a class="anchor" href="#trueusage-example-shared-situational-awareness"></a>1.1. Usage Example - Shared Situational Awareness</h3>
+<div class="paragraph">
+<p>Users in a range of environments have
+access to the central services, but typically wish to collaborate using a range of information. In a collaboration built on for example an emergency response there is typically a wide range of stakeholders and a need to provide them with relevant common information.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueusage-example-sharing-catalogue-searches"><a class="anchor" href="#trueusage-example-sharing-catalogue-searches"></a>1.2. Usage Example - Sharing Catalogue Searches</h3>
+<div class="paragraph">
+<p>A users wishes to save or exchange the query and results from various catalogue searches to avoid duplication of effort. In this case a user would execute one
+or more searches and retain each search request and possibly results set and be
+able to exchange the search and results set with others so that they could
+review the results or modify and re-execute the search.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueusage-example-processing-services-management"><a class="anchor" href="#trueusage-example-processing-services-management"></a>1.3. Usage Example - Processing Services Management</h3>
+<div class="paragraph">
+<p>A user wishes to save and/or exchange the configuration and/or results of an analysis or processing activity. The process to be executed will be stored in the
+context document as well as inline or referenced results.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueusage-example-index-or-catalogue-of-data-collections"><a class="anchor" href="#trueusage-example-index-or-catalogue-of-data-collections"></a>1.4. Usage Example - Index or Catalogue of Data Collections</h3>
+<div class="paragraph">
+<p>A user wishes to create a collection of datasets, for example OGC GeoPackages which are split geospatially (tiled) and/or based on themes.
+The OWS Context document can provide a catalogue or inventory of these.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truebenefits-of-ows-context-documents"><a class="anchor" href="#truebenefits-of-ows-context-documents"></a>1.5. Benefits of OWS Context Documents</h3>
+<div class="paragraph">
+<p>Some of the key benefits of OWS Context
+are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>OWC is
+open standards compliant allowing sharing between different system
+technologies.</p>
+</li>
+<li>
+<p>OWC
+documents are easily created, exchanged, catalogued and read.</p>
+</li>
+<li>
+<p>OWC
+documents can be encoded in XML/ATOM or GeoJSON. The two formats are interchangable.</p>
+</li>
+<li>
+<p>OWC
+supports not only WMS but a wide range of other OGC Services (CSW, WFS, WCS, WPS, WMTS etc)</p>
+</li>
+<li>
+<p>OWC Supports inline content in well known encodings such as GML and KML.</p>
+</li>
+<li>
+<p>OWS Context Documents can reference local files in for example
+GeoTIFF.</p>
+</li>
+<li>
+<p>OWC is
+     easily extensible to include new service types, inline content and file
+=      formats (OGC and non-OGC) without the need for a change in the standard.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An OWS Context Document primarily contains references to information and so is itself relatively small
+in size. It therefore is easy to exchange and access.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truenormative-references"><a class="anchor" href="#truenormative-references"></a>1.6. Normative References</h3>
+<div class="paragraph">
+<p>The following normative references are used in this document.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>OGC 12-080r2, OGC OWS Context Conceptual Model, 2013-09-01, <a href="https://portal.opengeospatial.org/files/?artifact_id=55182" class="bare">https://portal.opengeospatial.org/files/?artifact_id=55182</a></p>
+</li>
+<li>
+<p>OGC 12-084r2, OGC OWS Context Atom Encoding Standard, 2014-01-14, <a href="https://portal.opengeospatial.org/files/?artifact_id=55183" class="bare">https://portal.opengeospatial.org/files/?artifact_id=55183</a> or online at <a href="http://docs.opengeospatial.org/is/12-084r2/12-084r2.html" class="bare">http://docs.opengeospatial.org/is/12-084r2/12-084r2.html</a></p>
+</li>
+<li>
+<p>OGC 14-055r2, OGC OWS Context GeoJSON Encoding Standard 2016-10-08.
+This document has now been approved as an OGC Standard but has yet to be published to the OGC Standards registry.</p>
+</li>
+<li>
+<p>OGC 15-113r2, OGC CDB Core Standard. This document has now been approved as an OGC Standard but has yet to be published to the OGC Standards registry.</p>
+</li>
+<li>
+<p>GeoRSS Geographically Encoded Objects for RSS Feeds. (<a href="http://www.georss.org/" class="bare">http://www.georss.org/</a>)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truecommon-use-cases"><a class="anchor" href="#truecommon-use-cases"></a>2. Common Use Cases</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Context Document goal is to support the exchange of a set of information elements between human users or application programs for a range of purposes such that the Area of Interest,
+time range, resources and their configuration is unambiguously exchanged between applications.</p>
+</div>
+<div class="sect2">
+<h3 id="trueuse-cases"><a class="anchor" href="#trueuse-cases"></a>2.1. Use Cases</h3>
+<div class="paragraph">
+<p>The OWS Context document is aimed at meeting a range of user context exchange requirements around sharing information. This section provides more detail on the primary use cases described in section 1 including a definition ofcommon sub use-cases.</p>
+</div>
+<div class="sect3">
+<h4 id="trueshared-situational-awareness-cop-exchange"><a class="anchor" href="#trueshared-situational-awareness-cop-exchange"></a>2.1.1. Shared Situational Awareness/COP Exchange</h4>
+<div class="paragraph">
+<p>Users in a range of environments have access to the central services, but typically wish to collaborate using a shared set of information of information. In a collaboration built on for example an emergency response there is typically a wide range of stakeholders and a need to provide them with relevant common information. Often one person or group (typically geo-support) has the responsibility to provide a set of information to other users (in this case commanders and on-scene responders) in time sensitive situations to allow them to deal with the evolving situation; given that they do not have time to assemble information themselves. The OWS Context Document standard allows the geo-support personnel to assemble a set of relevant information, accessible via web services, and pass it to other users (by email message, file transfer or by storing it within an OGC catalogue).</p>
+</div>
+<div class="sect4">
+<h5 id="trueon-line-cop-use-case"><a class="anchor" href="#trueon-line-cop-use-case"></a>On-Line COP Use Case</h5>
+<div class="paragraph">
+<p>The exchange of a common operating picture or view of information is recognized as one of the most important uses of the OWS Context Document. Often a COP defines a geographic Area of Interest and a set of information layers and queries to specific points of interest. The content of a COP may be made up of both web services and local content, and the OWS Context document allows this to be supported. It also allows the inclusion of alternatives for a given layers.</p>
+</div>
+<div class="paragraph">
+<p>A critical element of a shared situational awareness environment, whether used in a military, civil incident management or any other situational awareness context is the ability to exchange COPs between systems based on different technology. There are many equivilent approaches to OWS Context, but none which offer a vendor agnostic approach. This hetrogeneous model means COPs can be shared in a number of environments, for example between command centers and deployed users in vehicles or on foot, and using everything from laptops in mobile vehicles through to tablets, mobile devices or wearable technology (see figure 2.1).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure2_1.png" alt="figure2 1.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 2.1 - OWS Context SSA Use Case</strong></p>
+</div>
+<div class="paragraph">
+<p>A COP may take many forms and have many uses, it may represent a 2D map display, a 3D map display, an augmented reality view, or a textual representation of geospatial information.</p>
+</div>
+<div class="paragraph">
+<p>The COP exchanged is not simply a graphic but a 'live' view. When loaded it should show the latest state of the information referenced. This is a capability of OWS Context.</p>
+</div>
+<div class="paragraph">
+<p>In this basic COP use case, OWS Contexts are simply exchanged between systems using a file system or via a messaging system such as email. More advanced exchanges are possible via a catalogue where users can identify groups of context documents relevant to them directly or incidentially. In addition it is possible that users could be notified on new contexts using a subscription scheme (potentially based on the OGC PubSub Standard).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure2_2.png" alt="figure2 2.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 2.2 - OWS Context SSA Use Case</strong></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueon-line-cop-exchange-via-catalogue"><a class="anchor" href="#trueon-line-cop-exchange-via-catalogue"></a>On-Line COP Exchange Via Catalogue</h5>
+<div class="paragraph">
+<p>OGC Compliant catalogue services provide a useful way to manage OWS Context Documents.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure2_3.png" alt="Figure2 3.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 2.2 - OWS Context Catalogue Storage Use Case</strong></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueoff-line-cop-exchange"><a class="anchor" href="#trueoff-line-cop-exchange"></a>Off-Line COP Exchange</h5>
+<div class="paragraph">
+<p>As part of this there is the recognition that in some cases the services referenced may not be available, and therefore some information (for example overlays or thumbnails) may need to be carried in the context document itself or alongside it. The context document layers may need to support both an on-line and an off-line alternative. One delivery model for a range of geospatial information is the GeoPackage standard. One specific model is to use the OWS Context document to provide a defintion of the services to be harvested into a GeoPackage so that the content can then be used off-line. Either a WPS service (GeoPackager) or the client itself can use the context document to load the GeoPackage with data and potentially update a GeoPackage which was already created. The context document allows the layers (WMS or WMTS) and feature types (WFS) required to be defined but also the geo-extent of data to be harvested.</p>
+</div>
+<div class="paragraph">
+<p>Of course GeoPackage is not the only carrier encoding that could be used in this way, and evolving standards such as CDB [Ref 4] could potentially be created from an OWS Context defintion. Alternatively completely proprietary caches could be created on a client, once again using OWS Context to define the content of a cache. The attractive element of this overall workflow is that a client can see what will be cached using the normal on-line access, before executing the process to cache the data.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure2_4.png" alt="Figure2 4.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 2.4 - OWS Context Off-line Use Case</strong></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueexchange-of-a-catalogue-query-and-results"><a class="anchor" href="#trueexchange-of-a-catalogue-query-and-results"></a>2.1.2. Exchange of a Catalogue Query and Results</h4>
+<div class="paragraph">
+<p>This use case relates to the exchange of discovery results from various catalogue searches, to avoid duplication of effort. In this case a user would execute one
+or more searches and retain each search request and possibly results set and be
+able to exchange the search and results set with others so that they could
+review the results or modify and re-execute the search.  To do this primarily CSW requests and optionally results will be stored in the context document. This allows the retrieved results to be reviewed but also allows the query used to obtain the results to be re-run or modified and rerun.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueexchange-of-the-configuration-and-results-of-a-process"><a class="anchor" href="#trueexchange-of-the-configuration-and-results-of-a-process"></a>2.1.3. Exchange of the Configuration and Results of a Process</h4>
+<div class="paragraph">
+<p>A user wishes to save and/or exchange the configuration and/or results of an analysis or processing activity. The process to be executed will be stored in the
+context document as well as inline or referenced results. This type of context
+document might use WPS to define the processing, with results returned by the
+WPS, inline in the Context document in GML, in a referenced image, or available
+via another OGC service (WMS, WMTS etc).</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truerequirements"><a class="anchor" href="#truerequirements"></a>2.2. Requirements</h3>
+<div class="paragraph">
+<p>The above use cases lead to the following general requirements for an OWS Context document.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Context Document shall provide the capability to identify the temporal extent of the COP (one or more time envelopes). (See Chapter 5 - Time Interval of Interest Metadata)</p>
+</li>
+<li>
+<p>The Context Document shall provide the capability to define a series of configured resources together which provide relevant information to the COP User.
+(See Chapter 5 - Resources)</p>
+</li>
+<li>
+<p>The Context Document shall define the order of precedence of the resources included (this could be interpreted as, for example, the order of display by visualization clients)
+(See Chapter 5 - Ordering of Resources)</p>
+</li>
+<li>
+<p>The Context Document shall allow any service type to be specified and any rules to be specified.
+(See Chapter 5 - Offering)</p>
+</li>
+<li>
+<p>The Context Document shall provide information to allow clients to test if a service matches a supported profile in order
+to understand if they can interpret it. (See Chapter 5 - Telling if an XML/GeoJSON Document is a Context Document)</p>
+</li>
+<li>
+<p>The Context Document shall allow information targeted at different representations to be included (i.e. not just targeted at geographic visualization or just visualization).
+(See Chapter 6 - Terradue - Using OWS Context to store Searches)</p>
+</li>
+<li>
+<p>The Context Document shall allow information to be marked as enabled or disabled, i.e. it is to be presented to the user when the context is opened or isn’t. Source: WMC Specification: which has and on/off option (layer not displayed or not when loaded).
+(See Chapter 5 - Visibility Attribute)</p>
+</li>
+<li>
+<p>It shall be possible to associate information with embedded graphics information. (See Chapter 5 - Content Offerings)</p>
+</li>
+<li>
+<p>The Context Document should allow the in-line inclusion of a resource (literal value of a resource) in the context document.
+(See Chapter 5 - Content Offerings)</p>
+</li>
+<li>
+<p>The Context Document should allow the parameters which define the resource or processing service steps to be captured.
+(See Chapter 5 - Envitia_TB12_OWC.xml and Envitia_TB12_OWC.json)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="truethe-ows-context-document-structure"><a class="anchor" href="#truethe-ows-context-document-structure"></a>3. The OWS Context Document Structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>An OWS Context (OWC) document consists of a number of key elements. These are shown in figure 3.1.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure3_1.png" alt="figure3 1.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 3.1 - Structure of OWS Context Document</strong></p>
+</div>
+<div class="paragraph">
+<p>The overall information includes a name,
+abstract and creation date as well as a range of high level metadata. It also
+includes an Area of Interest and a time range of interest (all optional). When
+using OWC for visualization the Area of Interest is typically the area
+displayed on screen when the context document is loaded. Similarly the
+time-range of interest is the time range that any time slider in the
+application will be set to. The core of the OWC document is an ordered list of resources.
+Again for visualization purposes the application should load the resources in
+the list such that the first resource is at the top (i.e. reverse draw
+order).</p>
+</div>
+<div class="paragraph">
+<p>Each layer in a context document is known as a ‘Resource’ which in the Atom encoding is mapped to a ‘Entry’ XML element. In reality a resource can be realised in a number of
+different ways, and so an OWC document allows various options to be specified.
+These are known as offerings. The intention is that these are, as far as is
+possible by the format used, equivalent and no priority is assigned to their
+order in the standard. They are intended to be alternatives that the client can
+use to allow it to visualise or use the resource. This structure is shown in Figure 3.2.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure3_2.png" alt="figure3 2.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 3.2 - OWS Context Document Offering</strong></p>
+</div>
+<div class="paragraph">
+<p>An example of two equivalent offerings is a WMS for a resource and then a WMTS request retrieving equivalent data. The client can read either and be reasonably certain that the result presented to
+the user is the same.  Another example is
+a resource which might offer a WFS and also in-line GML which is the equivalent
+of the request.</p>
+</div>
+<div class="paragraph">
+<p>There are two types of offering, service
+offerings and data offerings. A service offering has a service request (in the
+form of a capabilities request and a data request) and optional content and
+styling elements. A data offering has a content element and optional styling
+elements.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueows-context-for-users"><a class="anchor" href="#trueows-context-for-users"></a>4. OWS Context for Users</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The goal of this section is to give end users of OWS Context documents and idea or how they can be used. To do this a two existing applications are exploited to show the typical workflow. As can be seen in section 6 (Applications and Tools) there are a number of other applications which support OWS context with a range of use cases, so the following example is purely one method of exploiting it.</p>
+</div>
+<div class="paragraph">
+<p>The example in this section use the Envitia Horizon Web Client which was used during testbed 12. The functionality described is for guidance only. OWS Context does not mandate client behavior, and other implentors may design the functionality in a different way.</p>
+</div>
+<div class="sect2">
+<h3 id="truebuilding-the-view-to-be-shared"><a class="anchor" href="#truebuilding-the-view-to-be-shared"></a>4.1. Building the View to be Shared</h3>
+<div class="paragraph">
+<p>Firstly the user uses a browser based client to create an OWS Context Document. This process follows a fairly normal GIS Workflow.</p>
+</div>
+<div class="sect3">
+<h4 id="truecatalogue-search"><a class="anchor" href="#truecatalogue-search"></a>4.1.1. Catalogue Search</h4>
+<div class="paragraph">
+<p>The creation of most geospatial views begins with a discovery process. Typically geospatial information users define an area of interest, and categories of information they are interested and perform some form of search. The figure below shows an example of just such a search. In this case the user was looking for data in the area of ??? and after executing the search can see a range of data sources.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_1.png" alt="figure4 1.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.1 - Web Client Searching for Data</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueadding-information-from-wms-services"><a class="anchor" href="#trueadding-information-from-wms-services"></a>4.1.2. Adding information from WMS Services.</h4>
+<div class="paragraph">
+<p>Each returned dataset may be available as different service types. For example a rivers layer may be available via a WMS service or a WFS service. The user can see these various options in the Metadata and select to add one.As a shortcut, in this case the client gives the user a shortcut button to add the WMS if its present. The result is a layer added on top of the default background map in the client. This process is completed for a number of layers until the user is happy with the content. An example of this is shown in figure 4.2.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_2.png" alt="figure4 2.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.2 -Client Showing Two added Layers</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truesetting-layer-visibility"><a class="anchor" href="#truesetting-layer-visibility"></a>4.1.3. Setting Layer Visibility</h4>
+<div class="paragraph">
+<p>It may be a large number of layers are included in a Context Document as the creator wishes to pass on to the client the best range of data available. But there is a desire to keep the view simple for the user recieving the document. A good way of providing a rich set of infomation but limiting the clutter, is to include a number of additional layers but set their visibility off. In the example in figure 4.2 the imagery layer (second from the top in the list to the left) is set to off and therefore the imagery is not visible. The context document will be exported with this setting.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueadding-annotation"><a class="anchor" href="#trueadding-annotation"></a>4.1.4. Adding Annotation</h4>
+<div class="paragraph">
+<p>A common requirement is also to provide the receiving user with some annotation related to the view. In Horizon users have the ability to create as many annotation layers as they wish, but in this case we create a single one and add some annotation.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_3.png" alt="figure4 3.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.3 - Adding Annotation to the View</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truesaving-the-context-document"><a class="anchor" href="#truesaving-the-context-document"></a>4.1.5. Saving The Context Document</h4>
+<div class="paragraph">
+<p>The next step is to Save the Document, Horizon includes the capability to save context documents. The user can envoke the 'Save Context' option and then the dialog is displayed.</p>
+</div>
+<div class="paragraph">
+<p>In the Horizon Client the context document can be saved to an OGC CSW-ebRIM compliant Catalogue service (also known as a Registry) or to the local file system on the client.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_4.png" alt="figure4 4.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.4 - Selecting Location to Save Context</strong></p>
+</div>
+<div class="paragraph">
+<p>The dialog allows the layers loaded to be output in the Context Document. The layers in the client are listed and the user can pick which layers are included.</p>
+</div>
+<div class="paragraph">
+<p>In addition the user can select whether an area of interest is set (this can be toggled or or off). If set the context will be output with a bounding box in the context document. The other key option in the dialog is the ability to select which encoding of OWS Context is used. The options are ATOM/XML and GeoJSON. The choice really depends on the level of support in the client the document will be sent to, i.e whether it supports the ATOM/XML or GeoJSON encoding.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_5.png" alt="figure4 5.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.5 - Selecting Location to Save Context</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueexchanging-the-context-document"><a class="anchor" href="#trueexchanging-the-context-document"></a>4.1.6. Exchanging the Context Document</h4>
+<div class="paragraph">
+<p>OWS Context documents are simple text endcodings in either XML or JSON. As a result they can be sent as email attachments without zipping or converting them.</p>
+</div>
+<div class="paragraph">
+<p>The recieving user can simply save the document to a local file system ready to be loaded.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueloading-the-context-document"><a class="anchor" href="#trueloading-the-context-document"></a>4.1.7. Loading the Context Document</h4>
+<div class="paragraph">
+<p>Envitia Horizon can then be used to read the OWS Context document. The user uses the load function in
+the Web Client. Firstly the client is opened.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_6.png" alt="figure4 6.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.6 - Open Envitia Horizon</strong></p>
+</div>
+<div class="paragraph">
+<p>Th import function allows a document to be picked from the file system.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_7.png" alt="figure4 7.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.7 - Open Envitia Horizon</strong></p>
+</div>
+<div class="paragraph">
+<p>When a file is selected and loaded the geographic display zooms to the relevant area and loads all layers selected as on.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure4_8.png" alt="figure4 8.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4.8 - Context document loaded</strong></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecreating-a-revised-document"><a class="anchor" href="#truecreating-a-revised-document"></a>4.1.8. Creating a Revised Document</h4>
+<div class="paragraph">
+<p>In this example we have been using the same client for both creator and reader. It is therefore possible to then modify the context document by using the catalogue to find and add more data or add additional annotations. A new context document can be created which includes the additional content.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueows-context-for-developers"><a class="anchor" href="#trueows-context-for-developers"></a>5. OWS Context for Developers</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The goal of this section is to provide guidence to developers on implementing OWS Context in applications. It addresses both reading and writing OWS Context documents.  The section outlines a typical workflow for applications showing common operating pictures (i.e. to exchange a view of information between multiple users), but other use cases are considered at the end of this chapter.</p>
+</div>
+<div class="sect2">
+<h3 id="truereading-ows-context-documents"><a class="anchor" href="#truereading-ows-context-documents"></a>5.1. Reading OWS Context Documents</h3>
+<div class="paragraph">
+<p>There are two encodings of OWS Context, an ATOM/XML encoding and a GeoJSON encoding (both are approved OGC standards, although the GeoJSON encoding is in the final stages of publication). This section addresses both encodings, highlighting differences where they exist.</p>
+</div>
+<div class="sect3">
+<h4 id="truegeneral-syntax-rules"><a class="anchor" href="#truegeneral-syntax-rules"></a>5.1.1. General Syntax Rules</h4>
+<div class="paragraph">
+<p>Before proceeding too far it is worth
+noting a couple of things about the Context encodings.</p>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding"><a class="anchor" href="#trueatom-xml-encoding"></a>ATOM/XML Encoding</h5>
+<div class="ulist">
+<ul>
+<li>
+<p>The ATOM/XML encoding can be read by normal XML Parsers such as Xerces.</p>
+</li>
+<li>
+<p>The encoding uses ATOM (a dialect of XML). This cannot be validated using an XML schema. The approach used for validation of ATOM is Relax NG. Do not try and perform schema validation. (Note a Relax NG Validator for OWS Context ATOM/XML is available on the OGC Team Engine, see section 6 for details)</p>
+</li>
+<li>
+<p>The ATOM
+model allows for foreign content to be present in the document.  The implication of this is that a reader
+should not terminate when an element is encountered that it does not
+understand or expect. The element should simply be ignored.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegeojson-encoding"><a class="anchor" href="#truegeojson-encoding"></a>GeoJSON Encoding</h5>
+<div class="paragraph">
+<p>The GeoJSON encoding provides a JSON based alternative which is easily consumed by browser apps using JavaScript. It complies with the GeoJSON encoding model. In some cases minor limitations exist in this encoding and these are described where they occur.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truetelling-if-an-xml-document-is-a-context-document"><a class="anchor" href="#truetelling-if-an-xml-document-is-a-context-document"></a>5.1.2. Telling if an XML Document is a Context Document</h4>
+<div class="paragraph">
+<p>OWS Context documents use the standard extensions of .xml (for an ATOM/XML encoding) and .json or .geojson (for a GeoJSON Encoding). The method of determining if the document is an OWS Context document
+is for an application to query the following elements inside the file.</p>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding-2"><a class="anchor" href="#trueatom-xml-encoding-2"></a>ATOM/XML Encoding</h5>
+<div class="paragraph">
+<p>For an ATOM/XML document XML tag at the top level (i.e directly under the
+root element which will be ‘feed’) contains an atom link property:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;atom:link
+  rel="profile"
+  href="http://www.opengis.net/spec/owc-atom/1.0/req/core"
+  title="This file is compliant with
+  version 1.0 of OWS Context"/&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In particular the validation should verify
+the existence of the link tag, and its attributes rel and href and their
+values. The title is for information only.</p>
+</div>
+<div class="paragraph">
+<p>If the document is in a catalogue, it is
+also likely that the application can tell if it’s a context document from its
+mime type which is:</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegeojson-encoding-2"><a class="anchor" href="#truegeojson-encoding-2"></a>GeoJSON Encoding</h5>
+<div class="paragraph">
+<p>As with ATOM/XML, the document needs to be parsed and the element identifying a GeoJSON document as an OWS Context document is the 'profile' property on the overall FeatureCollection within the document, as shown below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json" data-lang="json">{
+  "type": "FeatureCollection",
+  "id": "http://www.opengis.net/owc/1.0/examples/geojson/1",
+  "properties" : {
+    "links" : {
+    "profiles" : ["http://www.opengis.net/spec/owc-geojson/1.0/req/core"],
+    ...
+  },
+  "features": [
+    ...
+    }]
+  }</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truemandatory-metadata"><a class="anchor" href="#truemandatory-metadata"></a>5.1.3. Mandatory Metadata</h4>
+<div class="paragraph">
+<p>Aside from the above, the only other
+mandatory items in a context document are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;atom:language&gt;</p>
+</li>
+<li>
+<p>&lt;atom:id&gt;</p>
+</li>
+<li>
+<p>&lt;atom:title&gt;</p>
+</li>
+<li>
+<p>&lt;atom:updated&gt;</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>So an application can depend on these tags being present when scanning context documents and this is the minimum information that could be catalogued, listed or presented to the user.</p>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding-3"><a class="anchor" href="#trueatom-xml-encoding-3"></a>ATOM/XML Encoding</h5>
+<div class="paragraph">
+<p>Wherever possible in the ATOM/XML encoding of OWS Context the atom element is used so that the document could be interpreted by an atom reader for wider interoperability.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en" &gt;
+&lt;link rel="profile"
+  href="http://www.opengis.net/spec/owc-atom/1.0/req/core"
+  title="This file is compliant with version 1.0 of OGC Context"/&gt;
+  &lt;id&gt;https://portal.opengeospatial.org/twiki/bin/view/OWSContextswg/SpecAtomEncoding#1&lt;/id&gt;
+  &lt;title&gt;Context Example :: Algal Pigment&lt;/title&gt;
+  &lt;updated&gt;2012-02-21T11:58:23Z&lt;/updated&gt;
+&lt;feed&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This is the minimum needed in an OWS Context document. It has no area of interest and no time range and it loads nothing, thus it is of little practical use but it is nevertheless a valid (and harmless) context document. There are valid reasons for such a 'null' document which relate to security and access control, thus it is allowed.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegeojson-encoding-3"><a class="anchor" href="#truegeojson-encoding-3"></a>GeoJSON Encoding</h5>
+<div class="paragraph">
+<p>The equivilent GeoJSON encoding of this content is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>"properties" : {
+    "lang"    : "en",
+    "title"   : "OWS Context GeoJSON Example",
+    "updated" : "2012-11-04T17:26:23Z",
+    ....
+},</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note in the Atom encoding the language is captured in the 'feed' tag whereas in the GeoJSON Encoding it is within the 'properties' element.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueoptional-metadata"><a class="anchor" href="#trueoptional-metadata"></a>5.1.4. Optional Metadata</h4>
+<div class="paragraph">
+<p>The document has a number of other ‘metadata’ tags at the top level (abstract, author etc), but in particular there is a reference to ISO compliant metadata which is the most extensive information source.</p>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding-4"><a class="anchor" href="#trueatom-xml-encoding-4"></a>ATOM/XML Encoding</h5>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;link rel="via" type="application/xml"
+href="http://www.acme.com/collections/algal.xml" title="Algal XML metadata"/&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As well as this optional metadata, OWC provides a series of top level elements which are key metadata. As a quick note to writers of OWS Context, the information in these elements and in any referenced ISO metadata, if present should be consistent. The user of the context document should be able to depend on this and use either. The top level elements include:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>atom:subtitle (an abstract for the document)</p>
+</li>
+<li>
+<p>atom:author/atom:name  (author of the document)</p>
+</li>
+<li>
+<p>dc:publisher (publisher, Dublin core Extension)</p>
+</li>
+<li>
+<p>atom:generator (application used to create the context)</p>
+</li>
+<li>
+<p>atom:rights (access rights. This field is not well defined).</p>
+</li>
+<li>
+<p>atom:category/@term  (Keywords, multiple)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of these has a direct GeoJSON equivilent. See the specification for details.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegeojson-encoding-4"><a class="anchor" href="#truegeojson-encoding-4"></a>GeoJSON Encoding</h5>
+<div class="paragraph">
+<p>The GeoJSON Encoding of these elements is as properties under the 'FeatureCollection' element in GeoJSON.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    "subtitle"         (an abstract for the document)
+    "authors"          (author(s) of the document)
+    "publisher"        (publisher of the document)
+    "creator"          (application used to create the context)
+    "rights"           (access rights. This field is not well defined).
+    "categories.term"  (Keywords, multiple)</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>As well as these attributes though there are two critical optional attributes which an application should interpret, these are area of interest and time interval. These are described below.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truearea-of-interest-metadata"><a class="anchor" href="#truearea-of-interest-metadata"></a>5.1.5. Area of Interest Metadata</h4>
+<div class="paragraph">
+<p>A context document optionally contains an area of interest metadata item which is defined by an envelope encoded in georss form.</p>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding-5"><a class="anchor" href="#trueatom-xml-encoding-5"></a>ATOM/XML Encoding</h5>
+<div class="paragraph">
+<p>In ATOM/XML this typically looks as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;georss:where&gt;
+    &lt;gml:Polygon&gt;
+&lt;gml:exterior&gt;
+ 	    &lt;gml:LinearRing&gt;
+&lt;gml:posList srsDimension="2"&gt;-90 -180 90 -180 90 180 -90 180 -90 -180&lt;/gml:posList&gt;
+    &lt;/gml:LinearRing&gt;
+&lt;/gml:exterior&gt;
+    &lt;/gml:Polygon&gt;
+&lt;/georss:where&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Firstly, as this is georss [REF 5], this is specified in WGS-84 (implicit). Note that although the above draws a box the envelope can be any shape of non-intersecting polygon.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegeojson-encoding-5"><a class="anchor" href="#truegeojson-encoding-5"></a>GeoJSON Encoding</h5>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>In GeoJSON there is an issue, as a geometric primitive cannot be a FeatureCollection, it needs to be on a feature. This means a GeoJSON encodiing can only capture a bounding box AOI, not a polygonal one.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>An example of the equivilent GeoJSON Encoding for the above is shown below.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+"type": "FeatureCollection",
+  "id": "http://www.opengis.net/owc/1.0/examples/geojson/1",
+  "properties" : {
+    ....
+    },
+  "bbox": [-180,-90,180,90],
+  "features": [{
+    ...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In general converting an OWS Context document from ATOM/XML to GeoJSON or from GeoJSON to ATOM/XML is lossless, but in this one respect, complex bounding envelopes will be converted in a conversion from ATOM/XML to GeoJSON to rectangular bounding envelopes.</p>
+</div>
+<div class="sect5">
+<h6 id="truedisplay-client-use-the-aoi-of-an-ows-context-document"><a class="anchor" href="#truedisplay-client-use-the-aoi-of-an-ows-context-document"></a>Display Client Use the AoI of an OWS Context Document</h6>
+<div class="paragraph">
+<p>The OWS Context document standard does not recommend any specific client action in relation to properties such as the Area of interest, but it is desirable that all clients represent the contents in a similar way as possible. The following is suggested behaviour which maximises the chances of commonality in interpretation of the context documents. Ultimately it may form best practice but should be considered at this stage simply suggested behaviour.</p>
+</div>
+<div class="paragraph">
+<p><strong>Suggestion 1:</strong> If no bounding box is specified, do not change the current view when the context document is loaded. The merit of this is that a user can create a 'master' Context Document with the AOI and then a series of other themed OWS Context Documents which when loaded will supplement the content but wont change the AOI.</p>
+</div>
+<div class="paragraph">
+<p><strong>Suggestion 2:</strong> If a bounding box is specified, but it is a different shape to the screen area of the client in which the OWC is to be displayed, perform a best fit, which ensures that the entire area of the AOI envelope is displayed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Suggestion 3:</strong> An alternative, if possible, would be to force the application&#8217;s geo-view to fit the OWS Context document AOI Aspect ratio but this is often problematic. Because it is unlikely that the client window AOI is a different shape from the AOI in the context document.</p>
+</div>
+<div class="paragraph">
+<p><strong>Suggestion 4:</strong> Some clients (particularly web clients) operate on fixed zoom values and so may not be able to exactly match the zoom level of an OWS Context document&#8217;s AOI. The recommendation is, if this is the case, adopt the lower zoom (smaller scale) so that the entire AOI is displayed.</p>
+</div>
+<div class="paragraph">
+<p><strong>Suggestion 5:</strong> The client could display the AOI in some way (say as a dotted box which can be turned on or off). This means the user can see what the intended AOI of the context document was.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/figure5_1.png" alt="figure5 1.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 4 – Matching AOI to Display.</strong></p>
+</div>
+<div class="paragraph">
+<p>There are of course options in terms of the behaviour. The application could ask the user if they want to zoom to the extent of the context document. Clients could also optionally display the extent of the context document as well as zooming to it. But the overall behavior should be that if the context document has an AOI the user should be able to centre on and zoom to it easily.</p>
+</div>
+<div class="paragraph">
+<p>There is also a potential issue with some browser based clients as these often have fixed zoom levels. So matching the zoom level in an OWS Context document to the zoom level options available in a browser client is always a little difficult.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>So, from the above, it should be noted that it is not possible to exactly re-create the view in terms of AOI present on the screen that created an OWS Context document. A close approximation is possible but re-creating the exact area is challenging on hetrogeneous devices.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The AOI is also not intended to provide metadata on the extent of the data present in the context document which may well extend outside of the AOI. It is providing a clear indication of what geographic area of interest is.
+The AOI is of course also valuable when searching for Context documents for a given operation or mission. As a result writers of context documents are encouraged to populate it.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truetime-interval-of-interest-metadata"><a class="anchor" href="#truetime-interval-of-interest-metadata"></a>5.1.6. Time Interval of Interest Metadata</h4>
+<div class="paragraph">
+<p>This element also has an important role in a context document for some applications. Some of the data included in a context document may have a time range. This might include weather data or event based recording data. The Time Interval of Interest, like the area of interest, is not the time extent of the data, it is the time range  which is expected to be of interest to the user. So if a particular event (e.g. movement of a hurricane) has a range of times where something critical happens, the time interval would be set to that range. The interval specified should be compliant with an ISO DateTime interval.</p>
+</div>
+<div class="sect4">
+<h5 id="truedisplay-client-use-of-times-and-time-intervals"><a class="anchor" href="#truedisplay-client-use-of-times-and-time-intervals"></a>Display Client use of Times and Time Intervals</h5>
+<div class="paragraph">
+<p>Again, not part of the OWS Context standard but the suggested behavior of the client for time interval is to set the end stops of a time slider to the time range of interest. This is though quite advanced behavior and many clients will not support time range. This is only suggested behavior and the time range may be ignored.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueresources"><a class="anchor" href="#trueresources"></a>5.1.7. Resources</h4>
+<div class="paragraph">
+<p>Resources are the key element of an OWC document. They each reference a set of geospatial information to be treated as a  logical element. In display clients resources will be realized as ‘layers’ in typical display clients. The resources are ordered such that the first item in the document is to be displayed at the front.  Resources contain a large number of elements, these fall into several categories.</p>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding-6"><a class="anchor" href="#trueatom-xml-encoding-6"></a>ATOM/XML Encoding</h5>
+<div class="paragraph">
+<p>Within the ATOM/XML encoding resources are mapped to ATOM 'Entry' elements:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"&gt;
+...
+&lt;entry&gt;
+  &lt;id&gt;http://www.acme.eu/geoserver/wms/#world_countries&lt;/id&gt;
+...
+&lt;/entry&gt;
+...
+&lt;/feed&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegeojson-encoding-6"><a class="anchor" href="#truegeojson-encoding-6"></a>GeoJSON encoding</h5>
+<div class="paragraph">
+<p>Within the GeoJSON Encoding resources are mapped to GeoJSON Feature Elements.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "type": "FeatureCollection",
+  "id": "http://www.opengis.net/owc/1.0/examples/geojson/1",
+  "properties": {
+    ...
+  },
+  "features": [{
+    "id" : "http://www.acme.eu/geoserver/wms/#world_countries”,
+      ...
+  }]
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueordering-of-resources"><a class="anchor" href="#trueordering-of-resources"></a>Ordering of Resources</h5>
+<div class="paragraph">
+<p>Resources in an OWS Context document are ordered. Particularly for visualisation this defines the order in which layers are drawn. The reason for this is that it is often important for visualisation. If an OWS Context document references many layers, background map route data, a series of critical overlays etc, it is important that these are drawn in the right order. For both ATOM/XML and GeoJSON the draw order <span class="yelow-background">is</span> the back to the front.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>A potential confusion in the standard is the draw order. It is easy to assume resources are drawn in the order they are read, but this is not true. The draw order for OWS Context Document Resources is from last to first. This is true for both ATOM/XML and GeoJSON.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The statement about order is present in a footnote at the bottom of the OWS Context Class table in each encoding document.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding-7"><a class="anchor" href="#trueatom-xml-encoding-7"></a>ATOM XML Encoding</h5>
+<div class="paragraph">
+<p>The specific statement in the standard, is:</p>
+</div>
+<div class="paragraph">
+<p>"This specification assigns no significance to the order of appearance of the child elements of atom:feed with the exception of atom:entry The order of atom:entry elements on the atom:feed MAY be used to
+identifiy the drawing order of the entries. In that case, the first atom:entry represents the top most layer".</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truegeojson-encoding-7"><a class="anchor" href="#truegeojson-encoding-7"></a>5.1.8. GeoJSON Encoding</h4>
+<div class="paragraph">
+<p>The specific statement in the standard is:</p>
+</div>
+<div class="paragraph">
+<p>"with the exception of member of the features array (the actual Resources). The order of the member of the features MAY be used to identify
+the drawing order of the resources. In that case, the first item of the array
+represents the top most layer.</p>
+</div>
+<div class="paragraph">
+<p>So both documents draw from last resource to first resource with the first resource in the file being drawn last.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truemandatory-elements-which-related-to-all-content"><a class="anchor" href="#truemandatory-elements-which-related-to-all-content"></a>5.1.9. Mandatory Elements which related to all content.</h4>
+<div class="paragraph">
+<p>These elements are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>id       id of the entry. Unique within the document.</p>
+</li>
+<li>
+<p>title    title of the entry (used for display of the layer in lists)</p>
+</li>
+<li>
+<p>content  abstract of the entry.</p>
+</li>
+<li>
+<p>updated  update date of the layer (as opposed to the whole document).</p>
+</li>
+</ul>
+</div>
+<div class="sect4">
+<h5 id="trueatom-xml-encoding-8"><a class="anchor" href="#trueatom-xml-encoding-8"></a>ATOM/XML Encoding</h5>
+<div class="paragraph">
+<p>The ATOM/XML items which map to the above are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>&lt;atom:id&gt; id of the entry. Unique within the document.</p>
+</li>
+<li>
+<p>&lt;atom:title&gt; title of the entry (used for display of the layer in lists)</p>
+</li>
+<li>
+<p>&lt;atom:content&gt; abstract of the entry.</p>
+</li>
+<li>
+<p>&lt;atom:updated&gt; update date of the layer (as opposed to the whole document).</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The content element is optional within context but is mandatory in ATOM. It is meant to be populated with displayable content encoded in HTML.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;html&gt;
+  &lt;body&gt;
+  This is an abstract for an OWS Context Document
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="truegeojson-encoding-8"><a class="anchor" href="#truegeojson-encoding-8"></a>GeoJSON encoding</h5>
+<div class="paragraph">
+<p>And the equivilent GeoJSON elements are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>"id"</p>
+</li>
+<li>
+<p>"title"</p>
+</li>
+<li>
+<p>"abstract"</p>
+</li>
+<li>
+<p>"updated"</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueoptional-metadata-elements"><a class="anchor" href="#trueoptional-metadata-elements"></a>5.1.10. Optional Metadata Elements</h4>
+<div class="paragraph">
+<p>There are a number of elements that fall into this category:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>atom:author  (author of the resource)</p>
+</li>
+<li>
+<p>dc:publisher (publisher of the resource)</p>
+</li>
+<li>
+<p>atom:rights (access rights information for the resource),</p>
+</li>
+<li>
+<p>&lt;atom:link@rel=alternate..&gt; Content Description reference (hyperlink)</p>
+</li>
+<li>
+<p>&lt;atom:category/@term..&gt; One or more keywords for the layer</p>
+</li>
+<li>
+<p>Geospatial extent</p>
+</li>
+<li>
+<p>Temporal extent.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>GeoJSON equivilents are documented in the specification.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truevisibility-attribute"><a class="anchor" href="#truevisibility-attribute"></a>5.1.11. Visibility Attribute</h4>
+<div class="paragraph">
+<p>This attribute is an option property on a resource. By default a resource in an OWS Context document is 'Active'. For a client visualising an OWS Context document and treating a resource as a layer for display (the most common usage) active is typically interpreted as visible on load.</p>
+</div>
+<div class="paragraph">
+<p>This property is intended to allow resources to be provided in a context document, not displayed initially but available to users if they want to use the data. In reality the attribute only needs to be specified where the visibility of the layer is to be off (false) as the resource is by default ‘on’.</p>
+</div>
+<div class="paragraph">
+<p>In the ATOM/XML Encoding this property is encoded as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;category scheme="http://www.opengis.net/spec/owc/active"term="false"/&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>In GeoJSON it is encoded as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>"properties" : { "active": false }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>For each of the properties in an OWS Context document you can find a mapping from the conceptual element (in the OWS Context Document Conceptual Model) to the specific encoding.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truedisplay-scale-attributes"><a class="anchor" href="#truedisplay-scale-attributes"></a>5.1.12. Display Scale Attributes</h4>
+<div class="paragraph">
+<p>A resource has two attributes which, if present are intended to set the display scale range of the resource. These are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>minScaleDemominator</p>
+</li>
+<li>
+<p>maxScaleDenominator</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>See the specification to determine how to set these, but they related to the scale value that a layer first appears as the user zooms in (maxScaleDenominator) and the scale that it disappears again.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truefolder-attribute"><a class="anchor" href="#truefolder-attribute"></a>5.1.13. Folder Attribute</h4>
+<div class="paragraph">
+<p>The folder attribute is intended to support the concept present in many clients or organising layers into folders. If  resources ‘Roads’ and Crossings are present in a context document and the folder attribute for each is set to ‘Transportation/Land’ the Roads and Crossings resources would be placed within a tree under Transportation/Land: E.g.</p>
+</div>
+<div class="paragraph">
+<p>For clients which don’t support such a hierarchy the folder attribute can be ignored. Also note, it is up to the writer of the context document to ensure that the folder organisation is consistent with the order of the layers. If it isn’t the context document is invalid and the result is undefined.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueoffering"><a class="anchor" href="#trueoffering"></a>5.1.14. Offering</h4>
+<div class="paragraph">
+<p>As discussed in section 2 an OWC document is trying to address two sorts of client. It is trying to satisfy the need of simple clients to be able to visualise the contents but also to provide enough information for more advanced clients to use the contents as well as visualise the initial view. This means they will for example allow the user to zoom in or out on the initial view represented by the context document.</p>
+</div>
+<div class="paragraph">
+<p>The primary element which supports the more advanced client is the ‘Offering’. A resource (which in GIS terms is a layer as described above) can have a number of offerings, and each offering is focussed on a particular representation of information. These can be one of a number of OGC Web Services, specifically WMS, WMTS, WFS, WCS, WPS and CSW, one of a number of inline or referenced formats, specifically  GML, KML, GeoTIFF, GMLJP2, GMLCOV, or a custom offering type defined in a profile or by an organisation.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truemultiple-offerings-and-priority"><a class="anchor" href="#truemultiple-offerings-and-priority"></a>5.1.15. Multiple Offerings and Priority</h4>
+<div class="paragraph">
+<p>Firstly a resource can have multiple offerings, and the goal is for them to be ‘more or less semantically equivalent’. In theory a client should be able to choose to read any of the offerings and get the same result.</p>
+</div>
+<div class="paragraph">
+<p>So for example a OWS Context document has a resource represented by four offerings, a WMS, a WFS with portrayal as SLD, and an inline GML Offering again with portrayal as SLD. Different clients could use these offerings as appropriate:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>a simple browser based client could use the WMS offering provided, using the standard portrayal</p>
+</li>
+<li>
+<p>a more sophisticated client, currently on-line is able to apply SLD base portrayal and intends to use the underlying geometry could use the WFS offering and the associated SLD Document.</p>
+<div class="literalblock">
+<div class="content">
+<pre>A second example is where an OWS Context document specifies both a WFS offering and an in-line GML Offering:</pre>
+</div>
+</div>
+</li>
+<li>
+<p>if the client is operating on-line (and can access the WMS service specified) then it could use the WMS offering.</p>
+</li>
+<li>
+<p>if the client is operating off-line then it could default to using in-line offerings (in this case the GML offering) and is thus able to display data.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>No priority is given to offerings within a Resource. But it is quite valid for a profile of an OWS Context to force a priority order on the offerings.</p>
+</div>
+<div class="paragraph">
+<p>Similarly for services such as WCS, a typical client behaviour might be to display this when on-line but to use an alternative offering eg. the GMLJP2 image while off-line.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueoffering-identitifcation-and-compliance"><a class="anchor" href="#trueoffering-identitifcation-and-compliance"></a>5.1.16. Offering Identitifcation and Compliance</h4>
+<div class="paragraph">
+<p>An offering begins with a simple tag, and then the URI of the offering type, see below:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wms"&gt;
+…
+&lt;/owc:offering&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The equivilent GeoJSON offieting code would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>"properties" : {
+  "offerings" : [{
+  "code" : "http://www.opengis.net/spec/owc-geojson/1.0/req/wms"
+  }]
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The offering type for those types supported in the standard begin with:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://www.opengis.net/spec/owc-atom/1.0/req/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Of for GeoJSON</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://www.opengis.net/spec/owc-geojson/1.0/req/</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The offering type is actually a direct reference to the OWC Standard Requirement Class. This allows the offering to be easily reviewed as the specification section relating to it is easily identifiable.</p>
+</div>
+<div class="paragraph">
+<p>It is also important to note that a server or client can implement as many or as few offering types as it wishes. In fact no offering type is mandatory. Thus in declaring compliance it is necessary to declare which conformance classes over and above the core are supported. The reason for not mandating any specific offerings (for example WMS) is that the current approach allows users to simply implement the conformance classes and offerings they need. So for example if you wish to use an OWC document to pass around Web Processing Service requests, you only need to support the Core and the WPS Offering Conformance class.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueconforming-to-a-specific-offering"><a class="anchor" href="#trueconforming-to-a-specific-offering"></a>5.1.17. Conforming to a Specific Offering</h4>
+<div class="paragraph">
+<p>IN the OWS Context 1.0 speification, each offering is defined in a requirement class. These classes are specified in the OWS Context Conceptual Model specification (appendix A). The specific operations, content elements and style elements allowed in each specific offering type are specified in this appendix.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueextension-offerings"><a class="anchor" href="#trueextension-offerings"></a>5.2. Extension Offerings</h3>
+<div class="paragraph">
+<p>The model used for specifying the offering also lends itself to clear delineation of the source of offerings where OWC is extended, for example an offering defined for the ACME company (remember road runner!) would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://www.acme.com/spec/owc-atom/spec/owc-atom/1.0/req/xxx</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>http://www.acme.com/spec/owc-atom/spec/owc-geojson/1.0/req/xxx</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where xxx was the offering type that the company wished to define. In fact the form of the URI, after the company specification prefix (<a href="http://www.acme.com" class="bare">http://www.acme.com</a>) is really a matter for the profile or offering specification author. OWC Standard Working Group recommends though that the URL be a resolvable URL to allow others to identify how to support the extension offering if they wish.</p>
+</div>
+<div class="paragraph">
+<p>The OWC Specification uses a relatively simple format to describe extensions. These can be found in the OWS Context Document Conceptual Model (REF???). All of the extensions are described in Appendix A so this provides examples of each type of offering element.
+Define the requirement class, typically with a minimum of one requirement which is a table summarising:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Any operations present and their multiplicity</p>
+</li>
+<li>
+<p>Any content elements and their multiplicity</p>
+</li>
+<li>
+<p>Any style elements and their multiplicity.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Lastly it is recommended that the relevant standards are referenced too.</p>
+</div>
+<div class="sect3">
+<h4 id="truestructure-of-an-offering"><a class="anchor" href="#truestructure-of-an-offering"></a>5.2.1. Structure of an Offering</h4>
+<div class="paragraph">
+<p>An offering is designed to allow specialist clients (either OGC or others reading extensions) to be able to exploit the offerings easily. Firstly there are really two main types of offering, the web service offering (referencing data via a web service end point) and the content offering (either referencing information in-line or via a file link).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueweb-service-offerings"><a class="anchor" href="#trueweb-service-offerings"></a>5.2.2. Web Service Offerings</h4>
+<div class="paragraph">
+<p>For a web service offering the offering includes two web service URIs (defined in
+‘Operation’ tags. The first is an OGC Get Capabilities URI and the second is a GetData URI. Here’s an example of the Get Capabilities operation:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wms"&gt;
+  &lt;owc:operation method="GET" code="GetCapabilities"
+    href="http://www.someserver.com/wrs.cgi?REQUEST=GetCapabilities&amp;amp;SERVICE=WMS
+    &amp;amp;VERSION=1.1.1"/&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note this is a fully expanded URI rather than a set of parameters. This is in some senses more complex for clients, but it was agreed, after much discussion, to be the most general approach. Anything can be encoded that can be put in a URI, clients can easily generate context documents without having to break this up, and reading clients at least have a good exemplar of a request that should work (and can test it) before breaking it up.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>One specific note to client implementors, both encoders and readers, the web service calls in an OWS Context Document are not directly executable from xml as specific XML encoding rules apply to URIs. Clients creating a context need to convert any special characters to a valid XML encoding (for example &amp; to &amp;) and clients reading the document need to do the reverse in any URLs before executing them via http.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Most service offerings have two operations, a ‘GetCapabilities’ operation and a data operation such as ‘GetMap’ for WMS or a ‘GetFeature’ for WFS. Typically the GetCapabilities is an http GET operation, whereas the get data may be either a GET or a POST.
+An operation has several key parameters. They are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Code: This specifies the type of operation, for example GetCapabilities.</p>
+</li>
+<li>
+<p>Method: This defines the access method, for example GET or POST.</p>
+</li>
+<li>
+<p>Href: This is the URI containing the definition of the request.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Here’s an example of a complete WMS Offering (http GET is used on both operations):</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wms"&gt;
+  &lt;owc:operation code="GetCapabilities" method="GET"
+    type="application/xml"
+    href="http://www.opengis.uab.cat/cgi-bin/SatCat/MiraMon.cgi?SERVICE=WMS&amp;amp;VER
+SION=1.1.1&amp;amp;REQUEST=GetCapabilities"/&gt;
+    &lt;owc:operation code="GetMap" method="GET" type="image/jpeg"
+      href="http://www.opengis.uab.cat/cgi-bin/SatCat/MiraMon.cgi?SERVICE=WMS&amp;amp;VER
+SION=1.1.1&amp;amp;REQUEST=GetMap&amp;amp;SRS=EPSG:23031&amp;amp;BBOX=355000,4539000,475000
+,4619000&amp;amp;WIDTH=600&amp;amp;HEIGHT=400&amp;amp;LAYERS=TotCatalunyaED50&amp;amp;FORMAT=im
+age/jpeg&amp;amp;STYLES=opti_fals&amp;amp;TIME=2011-03"/&gt;
+&lt;/owc:offering&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>When a POST method is used the body of the request is delivered in a ‘request’ tag, which specifies a type, for example ‘application/xml’.
+There is one other key element of an operation, and that is the ability to capture the result of the request in the operation. A typical example is a catalogue request offering, where the result as well as the request can be included. Here is a POST request fragment, with the post body (in the owc:request tag) and the result captured (in the owc:result tag).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;owc:operation method="POST" code="GetRecords"
+href="http://www.someserver.com/wrs.cgi?"&gt;
+&lt;owc:request type="application/xml"&gt;
+&lt;GetRecords
+service="CSW"
+version="2.0.2"
+maxRecords="5"
+startPosition="1"
+resultType="results"
+outputFormat="application/xml"
+outputSchema="http://www.opengis.net/cat/csw/2.0.2"
+xmlns="http://www.opengis.net/cat/csw/2.0.2"
+xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+xmlns:ogc="http://www.opengis.net/ogc"
+xmlns:ows="http://www.opengis.net/ows"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dct="http://purl.org/dc/terms/"
+xmlns:gml="http://www.opengis.net/gml"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2
+http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd"&gt;
+&lt;Query typeNames="csw:Record"&gt;
+&lt;ElementSetName typeNames="csw:Record"&gt;full&lt;/ElementSetName&gt;
+&lt;Constraint version="1.1.0"&gt;
+&lt;ogc:Filter&gt;
+&lt;ogc:And&gt; &lt;ogc:PropertyIsLike escapeChar="\" singleChar="?"
+wildCard="*"&gt;
+&lt;ogc:PropertyName&gt;dc:title&lt;/ogc:PropertyName&gt;
+&lt;ogc:Literal&gt;*Elevation*&lt;/ogc:Literal&gt;
+&lt;/ogc:PropertyIsLike&gt;
+&lt;ogc:Intersects&gt;
+&lt;ogc:PropertyName&gt;ows:BoundingBox&lt;/ogc:PropertyName&gt;
+&lt;gml:Envelope&gt;
+&lt;gml:lowerCorner&gt;14.05 46.46&lt;/gml:lowerCorner&gt;
+&lt;gml:upperCorner&gt;17.24 48.42&lt;/gml:upperCorner&gt;
+&lt;/gml:Envelope&gt;
+&lt;/ogc:Intersects&gt;
+&lt;/ogc:And&gt;
+&lt;/ogc:Filter&gt;
+&lt;/Constraint&gt;
+&lt;/Query&gt;
+&lt;/GetRecords&gt;
+&lt;/owc:request&gt;
+&lt;owc:result type="application/xml"&gt;
+&lt;csw:Record
+xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+xmlns:dc="http://purl.org/dc/elements/1.1/"
+xmlns:dct="http://purl.org/dc/terms/"
+xmlns:ows="http://www.opengis.net/ows"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2
+http://schemas.opengis.net/csw/2.0.2/record.xsd"&gt;
+&lt;dc:creator&gt;U.S. Geological Survey&lt;/dc:creator&gt;
+&lt;dc:contributor&gt;State of Texas&lt;/dc:contributor&gt;
+&lt;dc:publisher&gt;U.S. Geological Survey&lt;/dc:publisher&gt;
+&lt;dc:subject&gt;Elevation, Hypsography, and Contours&lt;/dc:subject&gt;
+&lt;dc:subject&gt;elevation&lt;/dc:subject&gt;
+&lt;dct:abstract&gt;Elevation data collected for the National
+Elevation Dataset (NED) ba based on 30m horizontal and 15m vertical
+accuracy.&lt;/dct:abstract&gt;
+&lt;dc:identifier&gt;ac522ef2-89a6-11db-91b1-
+7eea55d89593&lt;/dc:identifier&gt;
+&lt;dc:relation&gt;OfferedBy&lt;/dc:relation&gt;
+&lt;dc:source&gt;dd1b2ce7-0722-4642-8cd4-6f885f132777&lt;/dc:source&gt;
+&lt;dc:rights&gt;Copyright © 2004, State of Texas&lt;/dc:rights&gt;
+&lt;dc:type&gt;Service&lt;/dc:type&gt;
+&lt;dc:title&gt;National Elevation Mapping Service for
+Texas&lt;/dc:title&gt;
+&lt;dct:modified&gt;2004-03-01&lt;/dct:modified&gt;
+&lt;dc:language&gt;en&lt;/dc:language&gt;
+&lt;ows:BoundingBox&gt;
+&lt;ows:LowerCorner&gt;-108.44 28.229&lt;/ows:LowerCorner&gt;
+&lt;ows:UpperCorner&gt;-96.223 34.353&lt;/ows:UpperCorner&gt;
+&lt;/ows:BoundingBox&gt;
+&lt;/csw:Record&gt;
+&lt;/owc:result&gt;
+&lt;/owc:operation&gt;
+&lt;/owc:offering&gt;
+&lt;/entry&gt;
+...
+&lt;/feed&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The use of this is when using an OWS Context document to deliver for example a set of catalogue queries. It may be that a geospatial support person has been asked to find potential datasets, and they have prepared queries to find the relevant elevation datasets. The above structure would deliver the resulting datasets discovered and also provide the recipient with the queries used to obtain them.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecontent-offerings"><a class="anchor" href="#truecontent-offerings"></a>5.2.3. Content Offerings</h4>
+<div class="paragraph">
+<p>Content Offerings allow content to be embedded in an OWS Context document. These may be for example annotations or other information which is relatively small but is needed to qualify the bulk of the information in the context document. It might for example give an indication of where an oil spill is or where a polygon is needed to show the oil coverage and a point to show where the vessel is resting.
+An offering with content in it will use the ‘owc:content’ tag in the offering. In the example below the owc:content element is defining content inline.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;owc:offering
+code="http://www.opengis.net/spec/owc-atom/1.0/req/gml"&gt;
+&lt;owc:content type="application/gml+xml"&gt;
+&lt;gml:FeatureCollection gml:id="1234567890"
+xmlns:clk="http://www.envitia.com/clk" xmlns:gml="http://www.opengis.net/gml"
+xmlns:xlink="http://www.w3.org/1999/xlink"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.envitia.com/clk clk.xsd"&gt;
+&lt;gml:boundedBy&gt;
+&lt;gml:Envelope srsName="urn:opengis:def:crs:EPSG::28992"&gt;
+&lt;gml:lowerCorner&gt;5.000000 -76.318245&lt;/gml:lowerCorner&gt;
+&lt;gml:upperCorner&gt;28.485352 -37.000000&lt;/gml:upperCorner&gt;
+&lt;/gml:Envelope&gt;
+&lt;/gml:boundedBy&gt;
+&lt;gml:featureMembers&gt;
+&lt;clk:al212010_position&gt;
+&lt;clk:geometry&gt;
+&lt;gml:Point srsName="urn:opengis:def:crs:EPSG::4326"&gt;
+&lt;gml:Pos srsDimension="2"&gt;
+5.000000 -37.000000
+&lt;/gml:Pos&gt;
+&lt;/gml:Point&gt;
+&lt;/clk:geometry&gt;
+&lt;/clk:al212010_position&gt;
+&lt;/gml:featureMembers&gt;
+&lt;/gml:FeatureCollection&gt;
+&lt;/owc:content&gt;
+&lt;/owc:offering&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A content element can also reference content via a URL or a relative or absolute file path.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;owc:offering
+code="http://www.opengis.net/spec/owc-atom/1.0/req/geotiff"&gt;
+&lt;content type="image/tiff"
+href="file:\\home\gdal_eg/cea.tif"/&gt;
+&lt;/owc:offering&gt;
+&lt;/entry&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truestyle-elements-in-offerings"><a class="anchor" href="#truestyle-elements-in-offerings"></a>5.2.4. Style Elements in Offerings</h4>
+<div class="paragraph">
+<p>Offerings can have style documents associated with them. This is possible for both web services and content offerings.  In fact an offering can have multiple style documents associated with it. There is a ‘default’ tag which indicates which style should be displayed when the OWC document is loaded.
+Styles are not necessarily needed for all offerings, for example they may be provided with a WFS or WCS offering to define the appearance for a layer which is to be visualised, but are not essential for WMS.
+The suggested behaviour for styles is if there is more than one, the user should be able to select the alternative styles.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueextending-the-ows-context-document-standard"><a class="anchor" href="#trueextending-the-ows-context-document-standard"></a>6. Extending The OWS Context Document Standard</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The OWS Context Document has a number of methods of extension.</p>
+</div>
+<div class="sect3">
+<h4 id="truegeneral-extension-mechanisms"><a class="anchor" href="#truegeneral-extension-mechanisms"></a>6.1. General Extension Mechanisms</h4>
+<div class="paragraph">
+<p>Firstly, the OWS Context conceptual model contains 'extension' on almost all complex groups, so anything can be extended. In the ATOM/XML encoding of OWS Context this is implicit at ATOM allows extension at any point. Unlike XSD/XML Schema validation, Relax NG used for ATOM/XML allows extra content at any point, and ATOM parsers are mandated to ignore content they dont understand. GeoJSON also allows implementors to add content. There is currently no validation mechanism for GeoJSON but any validator would ignore additional unknown content as long as it is syntactically valid GeoJSON.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueidentifying-if-an-ows-context-document-has-been-extended"><a class="anchor" href="#trueidentifying-if-an-ows-context-document-has-been-extended"></a>6.2. Identifying if an OWS Context Document has been Extended</h4>
+<div class="paragraph">
+<p>Alas at present there is no way, without reading all the content, to identify if an  OWS Context document is a standard or extended document, or to characterise the extension.</p>
+</div>
+<div class="paragraph">
+<p>In Atom it is technically possible to add further 'rel=profile' elements to indicate this but it is not mandated by the standard. For example the following is valid:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;atom:link
+  rel="profile"
+  href="http://www.opengis.net/spec/owc-atom/1.0/req/core"
+  title="This file is compliant with
+  version 1.0 of OWS Context"/&gt;
+
+&lt;atom:link
+  rel="profile"
+  href="http://www.MyWebsite.com/spec/owc-textExtensions/1.0/req/csv"
+  title="This file is compliant with the MyWebsite Text Extensions to
+   OGC Context"/&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueextension-offerings-2"><a class="anchor" href="#trueextension-offerings-2"></a>6.3. Extension Offerings</h3>
+<div class="paragraph">
+<p>The most common type of extension to an OWS Context Document is to add offerings. Offerings relate to a specific web service, file or API interface (for example WMS, GeoTIFF or SQL Database). It is common to want to add additional types, either generally or specifically required to support an organisational requirement.</p>
+</div>
+<div class="paragraph">
+<p>The model used for specifying the offering also lends itself to clear delineation of the source of
+offerings where OWC is extended, for example an offering defined for the ACME company (remember road runner!) would be:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">http://www.acme.com/spec/owc-atom/1.0/req/xxx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>and in GeoJSON</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json" data-lang="json">http://www.acme.com/spec/owc-geojson/1.0/req/xxx</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where xxx was the offering type that the company wished to define. In fact the form of the URI, after the company specification prefix (<a href="http://www.acme.com" class="bare">http://www.acme.com</a>) is really a matter for the profile or offering specification author.</p>
+</div>
+<div class="paragraph">
+<p>The SWG suggests the inclusion of the encoding type (e.g owc-geojson) and a version number (which relates to the offering itself) as a way of future-proofing the offering definition.</p>
+</div>
+<div class="paragraph">
+<p>The OWC SWG recommends though that the offering URL be a resolvable URL to allow others to identify how to support the extension offering if they wish.</p>
+</div>
+<div class="paragraph">
+<p>The OWC Specification uses a relatively simple format to describe extensions. These can be found in the OWS Context Document Conceptual Model 12-080r2). All of the extensions are described in Appendix A so this provides examples of each type of offering element.
+Define the requirement class, typically with a minimum of one requirement which is a table summarising:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Any operations present and their multiplicity</p>
+</li>
+<li>
+<p>Any content elements and their multiplicity</p>
+</li>
+<li>
+<p>Any style elements and their multiplicity.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The convention within the standard is to use the 'Requirement Class' id to identify the offering. This is convenient as it points to the specification section that relates to the offering.</p>
+</div>
+<div class="paragraph">
+<p>For an external organisation wishing to create an offering type, we recommend the following:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Define an offering code which is a valid URI in a namespace owned by the organisation.</p>
+</li>
+<li>
+<p>If possible make the offering code a URL and make it resolvable.</p>
+</li>
+<li>
+<p>Define the offering purpose and implementation in the HTML or link supplied at the end of the URL.</p>
+</li>
+<li>
+<p>Register the Offering and URL with www.owscontext.org</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Considering the contents of an offering, within the constraints of the encoding environment (ATOM/XML, GeoJSON etc) an implementor is free to use any syntax they wish. It is helpful though to use the standard patterns within offerings so that implementation issues are eased on clients.</p>
+</div>
+<div class="paragraph">
+<p>The OWS Context Offerings defined in the standard are characterised by two types, ServiceOfferings (which reference a web service) and ContentOfferings (which reference a file or encode content in-line).</p>
+</div>
+<div class="paragraph">
+<p>Service offerings typically</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="trueexamples-of-ows-context-documents"><a class="anchor" href="#trueexamples-of-ows-context-documents"></a>6.4. Examples of OWS Context Documents</h3>
+<div class="paragraph">
+<p>The following are examples of OWS Context Documents created during Testbed 12. Note they are not validated and so it should not be assumed that the implementation is correct. If in doubt please consult the standards themselves (See [ref 2] and [ref 3]):</p>
+</div>
+<div class="paragraph">
+<p><a href="http://www.opengeospatial.org/standards/owc" class="bare">http://www.opengeospatial.org/standards/owc</a></p>
+</div>
+<div class="sect3">
+<h4 id="truestandard-examples-of-ows-context-documents"><a class="anchor" href="#truestandard-examples-of-ows-context-documents"></a>6.4.1. Standard Examples of OWS Context Documents</h4>
+<div class="paragraph">
+<p>The following examples are provided alongside the OWS Context Standard in the OGC Standards Repository.</p>
+</div>
+<div class="paragraph">
+<p><a href="http://schemas.opengis.net/owc/1.0/examples/" class="bare">http://schemas.opengis.net/owc/1.0/examples/</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueenvitia-tb12-ows-context-documents-in-atom-xml-and-geojson"><a class="anchor" href="#trueenvitia-tb12-ows-context-documents-in-atom-xml-and-geojson"></a>6.4.2. Envitia TB12 OWS Context documents in ATOM/XML and GeoJSON</h4>
+<div class="paragraph">
+<p>The following documents were generated from the Envitia Horizon Client. They show the following offering types as listed in the table below.</p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Layer Name</th>
+<th class="tableblock halign-left valign-top">Offering Type</th>
+<th class="tableblock halign-left valign-top">Access Method</th>
+</tr>
+</thead>
+<tfoot>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BlueMarbleCov</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+</tr>
+</tfoot>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Intervisibility</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WPS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">POST</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">us__countiescountiesType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WFS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">us_counties</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">WMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GET</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Atom/XML example is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;feed xml:lang="en" xmlns="http://www.w3.org/2005/Atom" xmlns:georss="http://www.georss.org/georss"
+    xmlns:gml="http://www.opengis.net/gml" xmlns:owc="http://www.opengis.net/owc/1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.w3.org/2005/Atom ../atom/2005/atom.xsd http://purl.org/dc/elements/1.1/ ../../../csw/2.0.2/rec-dcmes.xsd http://purl.org/dc/elements/1.1/ ../../../csw/2.0.2/rec-dcmes.xsd http://www.georss.org/georss ../georss/1.1/georss.xsd http://www.opengis.net/gml ../georss/1.1/gmlgeorss311.xsd http://www.opengis.net/owc/1.0 ../OWSContextCore.xsd"
+    xmlns:env="http://www.envitia.com/env"&gt;
+    &lt;link rel="profile" href="http://www.opengis.net/spec/owc-atom/1.0/req/core"
+        title="This file is compliant with version 1.0 of OWS Context"/&gt;
+    &lt;id&gt;1475248700290&lt;/id&gt;
+    &lt;title&gt;Export--2016-09-30T16:18:20&lt;/title&gt;
+    &lt;updated&gt;2016-09-30T16:18:20Z&lt;/updated&gt;
+    &lt;author&gt;
+        &lt;name&gt;Envitia&lt;/name&gt;
+        &lt;email&gt;support@envitia.com&lt;/email&gt;
+        &lt;uri&gt;http://www.envitia.com&lt;/uri&gt;
+    &lt;/author&gt;
+    &lt;georss:where&gt;
+        &lt;gml:Polygon&gt;
+            &lt;gml:exterior&gt;
+                &lt;gml:LinearRing&gt;
+                    &lt;gml:posList srsDimension="2" srsName="EPSG:4326"&gt;-23.293116707657
+                        -154.30193347887 94.382556027313 -154.30193347887 94.382556027313
+                        57.363088142915 -23.293116707657 57.363088142915 -23.293116707657
+                        -154.30193347887&lt;/gml:posList&gt;
+                &lt;/gml:LinearRing&gt;
+            &lt;/gml:exterior&gt;
+        &lt;/gml:Polygon&gt;
+    &lt;/georss:where&gt;
+    &lt;entry&gt;
+        &lt;id&gt;OpenLayers_Layer_Image_135270&lt;/id&gt;
+        &lt;title&gt;Intervisibility&lt;/title&gt;
+        &lt;updated&gt;2016-09-30T16:18:20Z&lt;/updated&gt;
+        &lt;georss:where&gt;
+            &lt;gml:Polygon&gt;
+                &lt;gml:exterior&gt;
+                    &lt;gml:LinearRing&gt;
+                        &lt;gml:posList srsDimension="2" srsName="EPSG:4326"&gt;51.532798732668745
+                            -3.11458080574287 51.644713993337504 -3.11458080574287
+                            51.644713993337504 -2.934917748918966 51.532798732668745
+                            -2.934917748918966 51.532798732668745 -3.11458080574287&lt;/gml:posList&gt;
+                    &lt;/gml:LinearRing&gt;
+                &lt;/gml:exterior&gt;
+            &lt;/gml:Polygon&gt;
+        &lt;/georss:where&gt;
+        &lt;content type="html"&gt;Intervisibility&lt;/content&gt;
+        &lt;category term="true" scheme="http://www.opengis.net/owc/active"/&gt;
+        &lt;category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/&gt;
+        &lt;owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wps"&gt;
+            &lt;owc:operation code="GetCapabilities" method="GET"
+                href="http://10.68.2.68:11080/MapLinkOGCServices/OGC?REQUEST=GetCapabilities&amp;amp;SERVICE=WPS&amp;amp;VERSION=1.0.0"/&gt;
+            &lt;owc:operation code="Execute" method="POST"
+                href="http://10.68.2.68:11080/MapLinkOGCServices/OGC?"&gt;
+                &lt;owc:request type="text/xml"&gt;
+                    &lt;wps:Execute service="WPS" version="1.0.0"
+                        xmlns:wps="http://www.opengis.net/wps/1.0.0"
+                        xmlns:ows="http://www.opengis.net/ows/1.1"
+                        xmlns:xlink="http://www.w3.org/1999/xlink"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://www.opengis.net/wps/1.0.0 ..\schemas\wps\1.0.0\wps\Execute_request.xsd"&gt;
+                        &lt;ows:Identifier&gt;MultiViewShed&lt;/ows:Identifier&gt;
+                        &lt;wps:DataInputs&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;source&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;source&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;britsouthlatlon&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;view_htype&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;view_htype&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;groundHeight&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;view_maxRadius&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;view_maxRadius&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;10000&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;target_height&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;target_height&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;0&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;target_htype&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;target_htype&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;groundHeight&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;requiredDisplayWidth&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;requiredDisplayWidth&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;143&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;requiredDisplayHeight&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;requiredDisplayHeight&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;89&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;displayStyle&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;displayStyle&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;redGreen&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;viewPoints&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;viewPoints&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:LiteralData&gt;&amp;lt;gml:LineString
+                                        srsName=&amp;quot;EPSG:4326&amp;quot;&amp;gt;&amp;lt;gml:posList
+                                        srsDimension=&amp;quot;3&amp;quot;&amp;gt;51.588791004021
+                                        -3.0247492773309 0
+                                        &amp;lt;/gml:posList&amp;gt;&amp;lt;/gml:LineString&amp;gt;&lt;/wps:LiteralData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                            &lt;wps:Input&gt;
+                                &lt;ows:Identifier&gt;requiredDisplayExtent&lt;/ows:Identifier&gt;
+                                &lt;ows:Title&gt;requiredDisplayExtent&lt;/ows:Title&gt;
+                                &lt;wps:Data&gt;
+                                    &lt;wps:BoundingBoxData crs="EPSG:4326"&gt;
+                                        &lt;ows:LowerCorner&gt;-3.11458080574287
+                                            51.532798732668745&lt;/ows:LowerCorner&gt;
+                                        &lt;ows:UpperCorner&gt;-2.934917748918966
+                                            51.644713993337504&lt;/ows:UpperCorner&gt;
+                                    &lt;/wps:BoundingBoxData&gt;
+                                &lt;/wps:Data&gt;
+                            &lt;/wps:Input&gt;
+                        &lt;/wps:DataInputs&gt;
+                        &lt;wps:ResponseForm&gt;
+                            &lt;wps:ResponseDocument&gt;
+                                &lt;wps:Output mimeType="image/png" asReference="true"&gt;
+                                    &lt;ows:Identifier&gt;image&lt;/ows:Identifier&gt;
+                                &lt;/wps:Output&gt;
+                            &lt;/wps:ResponseDocument&gt;
+                        &lt;/wps:ResponseForm&gt;
+                    &lt;/wps:Execute&gt;
+                &lt;/owc:request&gt;
+            &lt;/owc:operation&gt;
+        &lt;/owc:offering&gt;
+    &lt;/entry&gt;
+    &lt;entry&gt;
+        &lt;id&gt;OpenLayers_Layer_Vector_134151&lt;/id&gt;
+        &lt;title&gt;us__countiescountiesType&lt;/title&gt;
+        &lt;updated&gt;2016-09-30T16:18:20Z&lt;/updated&gt;
+        &lt;georss:where&gt;
+            &lt;gml:Polygon&gt;
+                &lt;gml:exterior&gt;
+                    &lt;gml:LinearRing&gt;
+                        &lt;gml:posList srsDimension="2" srsName="EPSG:4326"&gt;-90 -180 90 -180 90 180
+                            -90 180 -90 -180&lt;/gml:posList&gt;
+                    &lt;/gml:LinearRing&gt;
+                &lt;/gml:exterior&gt;
+            &lt;/gml:Polygon&gt;
+        &lt;/georss:where&gt;
+        &lt;content type="html"&gt;us__countiescountiesType&lt;/content&gt;
+        &lt;category term="true" scheme="http://www.opengis.net/owc/active"/&gt;
+        &lt;category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/&gt;
+        &lt;owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wfs"&gt;
+            &lt;owc:operation code="GetCapabilities" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wfs?REQUEST=GetCapabilities&amp;amp;SERVICE=WFS"/&gt;
+            &lt;owc:operation code="GetFeature" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wfs?REQUEST=GetFeature&amp;amp;SERVICE=WFS&amp;amp;VERSION=1.0.0&amp;amp;BBOX=-154.30193347887,-23.293116707657,57.363088142915,94.382556027313&amp;amp;NAMESPACES=xmlns(feature,null)&amp;amp;TYPENAME=feature:us__countiescountiesType"
+            /&gt;
+        &lt;/owc:offering&gt;
+    &lt;/entry&gt;
+    &lt;entry&gt;
+        &lt;id&gt;OpenLayers_Layer_WMS_133883&lt;/id&gt;
+        &lt;title&gt;us_counties&lt;/title&gt;
+        &lt;updated&gt;2016-09-30T16:18:20Z&lt;/updated&gt;
+        &lt;georss:where&gt;
+            &lt;gml:Polygon&gt;
+                &lt;gml:exterior&gt;
+                    &lt;gml:LinearRing&gt;
+                        &lt;gml:posList srsDimension="2" srsName="EPSG:4326"&gt;18.924781799316
+                            -178.21502685547 71.406646728516 -178.21502685547 71.406646728516
+                            -66.969848632813 18.924781799316 -66.969848632813 18.924781799316
+                            -178.21502685547&lt;/gml:posList&gt;
+                    &lt;/gml:LinearRing&gt;
+                &lt;/gml:exterior&gt;
+            &lt;/gml:Polygon&gt;
+        &lt;/georss:where&gt;
+        &lt;content type="html"&gt;us_counties&lt;/content&gt;
+        &lt;category term="true" scheme="http://www.opengis.net/owc/active"/&gt;
+        &lt;category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/&gt;
+        &lt;owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wms"&gt;
+            &lt;owc:operation code="GetCapabilities" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wms?REQUEST=GetCapabilities&amp;amp;SERVICE=WMS"/&gt;
+            &lt;owc:operation code="GetMap" method="GET"
+                href="http://demo.luciad.com:8080/LuciadFusion/wms?REQUEST=GetMap&amp;amp;SERVICE=WMS&amp;amp;TRANSPARENT=true&amp;amp;LAYERS=us_counties&amp;amp;FORMAT=image/png&amp;amp;VERSION=1.1.1&amp;amp;STYLES=&amp;amp;SRS=EPSG:4326&amp;amp;WIDTH=1680&amp;amp;HEIGHT=934&amp;amp;BBOX=-154.30193347887,-23.293116707657,57.363088142915,94.382556027313"
+            /&gt;
+        &lt;/owc:offering&gt;
+    &lt;/entry&gt;
+    &lt;entry&gt;
+        &lt;id&gt;OpenLayers_Layer_Image_134365&lt;/id&gt;
+        &lt;title&gt;BlueMarbleCov&lt;/title&gt;
+        &lt;updated&gt;2016-09-30T16:18:20Z&lt;/updated&gt;
+        &lt;georss:where&gt;
+            &lt;gml:Polygon&gt;
+                &lt;gml:exterior&gt;
+                    &lt;gml:LinearRing&gt;
+                        &lt;gml:posList srsDimension="2" srsName="EPSG:4326"&gt;-90 -180 90 -180 90 180
+                            -90 180 -90 -180&lt;/gml:posList&gt;
+                    &lt;/gml:LinearRing&gt;
+                &lt;/gml:exterior&gt;
+            &lt;/gml:Polygon&gt;
+        &lt;/georss:where&gt;
+        &lt;content type="html"&gt;BlueMarbleCov&lt;/content&gt;
+        &lt;category term="true" scheme="http://www.opengis.net/owc/active"/&gt;
+        &lt;category term="1" scheme="http://www.envitia.com/horizon/layer/opacity"/&gt;
+        &lt;owc:offering code="http://www.opengis.net/spec/owc-atom/1.0/req/wcs"&gt;
+            &lt;owc:operation code="GetCapabilities" method="GET"
+                href="http://ows.rasdaman.org/rasdaman/ows?REQUEST=GetCapabilities&amp;amp;SERVICE=WCS&amp;amp;VERSION=2.0.0"/&gt;
+            &lt;owc:operation code="GetCoverage" method="GET"
+                href="http://ows.rasdaman.org/rasdaman/ows?SCALEFACTOR=10.174297058223718&amp;amp;format=image/png&amp;amp;CoverageId=BlueMarbleCov&amp;amp;request=GetCoverage&amp;amp;version=2.0.0&amp;amp;service=WCS"
+            /&gt;
+        &lt;/owc:offering&gt;
+    &lt;/entry&gt;
+&lt;/feed&gt;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p><a href="examples/Envitia_TB12_OWC.xml">Envitia TB12 Atom/XML Example</a></p>
+</div>
+<div class="paragraph">
+<p>And the equivilent GeoJSON example is as follows:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json" data-lang="json">{
+    "type": "FeatureCollection",
+    "properties": {
+        "lang": "en",
+        "title": "Export--2016-09-30T16:18:30",
+        "updated": "2016-09-30T16:18:30Z",
+        "links": [{
+            "rel": "profile",
+            "href": "http://www.opengis.net/spec/owc-geojson/1.0/req/core",
+            "title": "This file is compliant with version 1.0 of OWS Context"
+        }],
+        "authors": [{
+            "name": "Envitia",
+            "email": "support@envitia.com",
+            "uri": "http://www.envitia.com"
+        }]
+    },
+    "id": 1475248710263,
+    "bbox": [
+        -154.30193347887,
+        -20.206335142339,
+        57.363088142915,
+        91.295774461995
+    ],
+    "features": [
+        {
+            "properties": {
+                "title": "Intervisibility",
+                "updated": "2016-09-30T16:18:30Z",
+                "content": "Intervisibility",
+                "categories": [
+                    {
+                        "term": true,
+                        "scheme": "http://www.opengis.net/owc/active"
+                    },
+                    {
+                        "term": 1,
+                        "scheme": "http://www.envitia.com/horizon/layer/opacity"
+                    }
+                ],
+                "offerings": [{
+                    "code": "http://www.opengis.net/spec/owc-geojson/1.0/req/wps",
+                    "operations": [
+                        {
+                            "code": "GetCapabilities",
+                            "method": "GET",
+                            "type": "text/xml",
+                            "href": "http://10.68.2.68:11080/MapLinkOGCServices/OGC?REQUEST=GetCapabilities&amp;SERVICE=WPS&amp;VERSION=1.0.0"
+                        },
+                        {
+                            "code": "Execute",
+                            "method": "POST",
+                            "href": "http://10.68.2.68:11080/MapLinkOGCServices/OGC?",
+                            "request": {
+                                "type": "text/xml",
+                                "request": "&lt;wps:Execute service=\"WPS\" version=\"1.0.0\" xmlns:wps=\"http://www.opengis.net/wps/1.0.0\" xmlns:ows=\"http://www.opengis.net/ows/1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.opengis.net/wps/1.0.0 ..\\schemas\\wps\\1.0.0\\wps\\Execute_request.xsd\"&gt;&lt;ows:Identifier&gt;MultiViewShed&lt;\/ows:Identifier&gt;&lt;wps:DataInputs&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;source&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;source&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;britsouthlatlon&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;view_htype&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;view_htype&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;groundHeight&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;view_maxRadius&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;view_maxRadius&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;10000&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;target_height&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;target_height&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;0&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;target_htype&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;target_htype&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;groundHeight&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;requiredDisplayWidth&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;requiredDisplayWidth&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;143&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;requiredDisplayHeight&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;requiredDisplayHeight&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;89&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;displayStyle&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;displayStyle&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;redGreen&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;viewPoints&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;viewPoints&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:LiteralData&gt;&amp;lt;gml:LineString srsName=&amp;quot;EPSG:4326&amp;quot;&amp;gt;&amp;lt;gml:posList srsDimension=&amp;quot;3&amp;quot;&amp;gt;51.588791004021 -3.0247492773309 0   &amp;lt;/gml:posList&amp;gt;&amp;lt;/gml:LineString&amp;gt;&lt;\/wps:LiteralData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;wps:Input&gt;&lt;ows:Identifier&gt;requiredDisplayExtent&lt;\/ows:Identifier&gt;&lt;ows:Title&gt;requiredDisplayExtent&lt;\/ows:Title&gt;&lt;wps:Data&gt;&lt;wps:BoundingBoxData crs=\"EPSG:4326\"&gt;&lt;ows:LowerCorner&gt;-3.11458080574287 51.532798732668745&lt;\/ows:LowerCorner&gt;&lt;ows:UpperCorner&gt;-2.934917748918966 51.644713993337504&lt;\/ows:UpperCorner&gt;&lt;\/wps:BoundingBoxData&gt;&lt;\/wps:Data&gt;&lt;\/wps:Input&gt;&lt;\/wps:DataInputs&gt;&lt;wps:ResponseForm&gt;&lt;wps:ResponseDocument&gt;&lt;wps:Output mimeType=\"image/png\" asReference=\"true\"&gt;&lt;ows:Identifier&gt;image&lt;\/ows:Identifier&gt;&lt;\/wps:Output&gt;&lt;\/wps:ResponseDocument&gt;&lt;\/wps:ResponseForm&gt;&lt;\/wps:Execute&gt;"
+                            }
+                        }
+                    ]
+                }]
+            },
+            "type": "Feature",
+            "id": "OpenLayers_Layer_Image_135270",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [
+                        -3.11458080574287,
+                        51.532798732668745
+                    ],
+                    [
+                        -3.11458080574287,
+                        51.644713993337504
+                    ],
+                    [
+                        -2.934917748918966,
+                        51.644713993337504
+                    ],
+                    [
+                        -2.934917748918966,
+                        51.532798732668745
+                    ],
+                    [
+                        -3.11458080574287,
+                        51.532798732668745
+                    ]
+                ]]
+            }
+        },
+        {
+            "properties": {
+                "title": "us__countiescountiesType",
+                "updated": "2016-09-30T16:18:30Z",
+                "content": "us__countiescountiesType",
+                "categories": [
+                    {
+                        "term": true,
+                        "scheme": "http://www.opengis.net/owc/active"
+                    },
+                    {
+                        "term": 1,
+                        "scheme": "http://www.envitia.com/horizon/layer/opacity"
+                    }
+                ],
+                "offerings": [{
+                    "code": "http://www.opengis.net/spec/owc-geojson/1.0/req/wfs",
+                    "operations": [
+                        {
+                            "code": "GetCapabilities",
+                            "method": "GET",
+                            "href": "http://demo.luciad.com:8080/LuciadFusion/wfs?REQUEST=GetCapabilities&amp;SERVICE=WFS"
+                        },
+                        {
+                            "code": "GetFeature",
+                            "method": "GET",
+                            "href": "http://demo.luciad.com:8080/LuciadFusion/wfs?REQUEST=GetFeature&amp;SERVICE=WFS&amp;VERSION=1.0.0&amp;BBOX=-154.30193347887,-20.206335142339,57.363088142915,91.295774461995&amp;NAMESPACES=xmlns(feature,null)&amp;TYPENAME=feature:us__countiescountiesType"
+                        }
+                    ]
+                }]
+            },
+            "type": "Feature",
+            "id": "OpenLayers_Layer_Vector_134151",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [
+                        -180,
+                        -90
+                    ],
+                    [
+                        -180,
+                        90
+                    ],
+                    [
+                        180,
+                        90
+                    ],
+                    [
+                        180,
+                        -90
+                    ],
+                    [
+                        -180,
+                        -90
+                    ]
+                ]]
+            }
+        },
+        {
+            "properties": {
+                "title": "us_counties",
+                "updated": "2016-09-30T16:18:30Z",
+                "content": "us_counties",
+                "categories": [
+                    {
+                        "term": true,
+                        "scheme": "http://www.opengis.net/owc/active"
+                    },
+                    {
+                        "term": 1,
+                        "scheme": "http://www.envitia.com/horizon/layer/opacity"
+                    }
+                ],
+                "offerings": [{
+                    "code": "http://www.opengis.net/spec/owc-geojson/1.0/req/wms",
+                    "operations": [
+                        {
+                            "code": "GetCapabilities",
+                            "method": "GET",
+                            "href": "http://demo.luciad.com:8080/LuciadFusion/wms?REQUEST=GetCapabilities&amp;SERVICE=WMS"
+                        },
+                        {
+                            "code": "GetMap",
+                            "method": "GET",
+                            "href": "http://demo.luciad.com:8080/LuciadFusion/wms?REQUEST=GetMap&amp;SERVICE=WMS&amp;TRANSPARENT=true&amp;LAYERS=us_counties&amp;FORMAT=image/png&amp;VERSION=1.1.1&amp;STYLES=&amp;SRS=EPSG:4326&amp;WIDTH=1680&amp;HEIGHT=885&amp;BBOX=-154.30193347887,-20.206335142339,57.363088142915,91.295774461995"
+                        }
+                    ]
+                }]
+            },
+            "type": "Feature",
+            "id": "OpenLayers_Layer_WMS_133883",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [
+                        -178.21502685547,
+                        18.924781799316
+                    ],
+                    [
+                        -178.21502685547,
+                        71.406646728516
+                    ],
+                    [
+                        -66.969848632813,
+                        71.406646728516
+                    ],
+                    [
+                        -66.969848632813,
+                        18.924781799316
+                    ],
+                    [
+                        -178.21502685547,
+                        18.924781799316
+                    ]
+                ]]
+            }
+        },
+        {
+            "properties": {
+                "title": "BlueMarbleCov",
+                "updated": "2016-09-30T16:18:30Z",
+                "content": "BlueMarbleCov",
+                "categories": [
+                    {
+                        "term": true,
+                        "scheme": "http://www.opengis.net/owc/active"
+                    },
+                    {
+                        "term": 1,
+                        "scheme": "http://www.envitia.com/horizon/layer/opacity"
+                    }
+                ],
+                "offerings": [{
+                    "code": "http://www.opengis.net/spec/owc-geojson/1.0/req/wcs",
+                    "operations": [
+                        {
+                            "code": "GetCapabilities",
+                            "method": "GET",
+                            "type": "text/xml",
+                            "href": "http://ows.rasdaman.org/rasdaman/ows?REQUEST=GetCapabilities&amp;SERVICE=WCS&amp;VERSION=2.0.0"
+                        },
+                        {
+                            "code": "GetCoverage",
+                            "method": "GET",
+                            "href": "http://ows.rasdaman.org/rasdaman/ows?SCALEFACTOR=10.174297058223718&amp;format=image/png&amp;CoverageId=BlueMarbleCov&amp;request=GetCoverage&amp;version=2.0.0&amp;service=WCS"
+                        }
+                    ]
+                }]
+            },
+            "type": "Feature",
+            "id": "OpenLayers_Layer_Image_134365",
+            "geometry": {
+                "type": "Polygon",
+                "coordinates": [[
+                    [
+                        -180,
+                        -90
+                    ],
+                    [
+                        -180,
+                        90
+                    ],
+                    [
+                        180,
+                        90
+                    ],
+                    [
+                        180,
+                        -90
+                    ],
+                    [
+                        -180,
+                        -90
+                    ]
+                ]]
+            }
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="trueapplications-and-tools"><a class="anchor" href="#trueapplications-and-tools"></a>7. Applications and Tools</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="trueapplications"><a class="anchor" href="#trueapplications"></a>7.1. Applications</h3>
+<div class="paragraph">
+<p>A number of OWS Context Implementations exist. Initial implementors include:</p>
+</div>
+<div class="sect3">
+<h4 id="truecreaf-miramon-client"><a class="anchor" href="#truecreaf-miramon-client"></a>7.1.1. CREAF MiraMon Client</h4>
+<div class="paragraph">
+<p>The Centre de Recerca Ecològica i Aplicacions Forestals (CREAF) in Spain has developed a generic client (MiraMon) used for research purposes which is able to read and write OWS Context Documents using the Atom Encoding. This client supports the OWS Context Core and the WMS and WMTS Extensions.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure6_1.png" alt="Figure6 1.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 5.1 CREAF MiraMon Client</strong></p>
+</div>
+<div class="paragraph">
+<p>For more details of the MiraMon client see: <a href="http://www.creaf.uab.es/MiraMon/" class="bare">http://www.creaf.uab.es/MiraMon/</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="truecompusult"><a class="anchor" href="#truecompusult"></a>7.1.2. Compusult</h4>
+<div class="paragraph">
+<p>Compusult have added support for OWS Context within their Web Enterprise Suite product line. This includes cataloging, reading and writing OWS Context Documents.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueenvitia-ltd-envitia-inc"><a class="anchor" href="#trueenvitia-ltd-envitia-inc"></a>7.1.3. Envitia Ltd/Envitia Inc</h4>
+<div class="paragraph">
+<p>Envitia, a UK/US SME operating in the Defence and Intelligence space has implemented support for OWS Context within many of its products.</p>
+</div>
+<div class="sect4">
+<h5 id="trueenvitia-horizon-geoportal"><a class="anchor" href="#trueenvitia-horizon-geoportal"></a>Envitia Horizon GeoPortal</h5>
+<div class="paragraph">
+<p>Envitia Horizon supports both the ATOM/XML encoding and Draft GeoJSON Encoding of OWS Context. This is a browser based client) using JavaScript/HTML5 with supporting Java Services. Horizon supports the OWS Context core, the WMS, WMTS, WFS, GML and GeoTIFF extensions. It is also, in prototype form able to support WCS and WPS. All of these extensions are available on both ATOM XML and GeoJSON.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure6_3.png" alt="Figure6 3.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 5.1 Envitia Horizon Browser Client</strong></p>
+</div>
+<div class="paragraph">
+<p>Envitia Horizon is being used, together with other Envitia and Open Source software in the UK Defence Geographic Services system a major UK Defence infrastructure programme being delivered to UK MOD by Hewlett Packard.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="trueenvitia-maplink-pro"><a class="anchor" href="#trueenvitia-maplink-pro"></a>Envitia MapLink Pro</h5>
+<div class="paragraph">
+<p>Envitia MapLink Pro is a C++ based developer toolkit, available on Windows, Linux and Android which includes an OWS Context SDK capable of reading and writing OWS Context Documents. By default it supports WMS, WMTS and GML but supports the capability to read/write any OWS Context Offering. It can be seen below displaying an OWS Context Document on an Android Tablet.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure6_4.png" alt="Figure6 4.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 5.4 Envitia MapLink Pro Android Client</strong></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueesri"><a class="anchor" href="#trueesri"></a>7.1.4. ESRI</h4>
+<div class="paragraph">
+<p>ESRI are developing capability based on the GeoJSON encoding of OWS Context, including supporting services such as WMS as well as the ESRI GeoServices REST model.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueterradue"><a class="anchor" href="#trueterradue"></a>7.1.5. TerraDue</h4>
+<div class="paragraph">
+<p>OWS Context Documents are being used by TerraDue in the platforms being developed for ESA. All the thematic apps are defined using OWS Context documents. See
+<a href="https://hydrology-tep.eo.esa.int/#!thematic" class="bare">https://hydrology-tep.eo.esa.int/#!thematic</a>] for more information.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure6_5.png" alt="Figure6 5.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 5.5 TerraDue Implementation for ESA</strong></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Figure6_6.png" alt="Figure6 6.png">
+</div>
+</div>
+<div class="paragraph">
+<p><strong>Figure 5.6 TerraDue Implementation for ESA</strong></p>
+</div>
+<div class="paragraph">
+<p>Use of OWS Context is also being extended to the Geo-Hazard TEP area (<a href="https://geohazards-tep.eo.esa.int/" class="bare">https://geohazards-tep.eo.esa.int/</a>) and Urban TEP (<a href="https://urban-tep.eo.esa.int/" class="bare">https://urban-tep.eo.esa.int/</a>)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueeuropean-satellite-centre"><a class="anchor" href="#trueeuropean-satellite-centre"></a>7.1.6. European Satellite Centre</h4>
+<div class="paragraph">
+<p>The European Satellite Centre is using the OWS Context Document to describe collections of imagery relevant to a given scenario or situation. For more information contact the Chief Technology Officer at SATCEN <a href="https://www.satcen.europa.eu/" class="bare">https://www.satcen.europa.eu/</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="truetools"><a class="anchor" href="#truetools"></a>7.2. Tools</h3>
+<div class="sect3">
+<h4 id="trueogc-cite-test-validator-for-owc-atom-xml-encoding"><a class="anchor" href="#trueogc-cite-test-validator-for-owc-atom-xml-encoding"></a>7.2.1. OGC CITE Test Validator for OWC Atom/XML Encoding</h4>
+<div class="paragraph">
+<p>The OGC CITE test program includes the ability to validate an ATOM/XML OWS Context document.</p>
+</div>
+<div class="paragraph">
+<p>The tests partially test the following requirements classes defined in the OWS Context Atom Encoding Standard (OGC 12-08r2):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Requirement: <a href="http://www.opengis.net/spec/owc-atom/1.0/req/core" class="bare">http://www.opengis.net/spec/owc-atom/1.0/req/core</a></p>
+</li>
+<li>
+<p>Requirement: <a href="http://www.opengis.net/spec/owc-atom/1.0/req/atomRules" class="bare">http://www.opengis.net/spec/owc-atom/1.0/req/atomRules</a></p>
+</li>
+<li>
+<p>Requirement: <a href="http://www.opengis.net/spec/owc-atom/1.0/req/owcEncoding" class="bare">http://www.opengis.net/spec/owc-atom/1.0/req/owcEncoding</a></p>
+</li>
+<li>
+<p>Requirement: <a href="http://www.opengis.net/spec/owc-atom/1.0/req/wms/content" class="bare">http://www.opengis.net/spec/owc-atom/1.0/req/wms/content</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>At present the validator only tests the OWS Context Core requirement class and the WMS Offering requirement class.</p>
+</div>
+<div class="paragraph">
+<p>Details of the OWS Context tests can be found at:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://cite.opengeospatial.org/teamengine/" class="bare">http://cite.opengeospatial.org/teamengine/</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="trueows-context-atom-xml-to-geojson-converter"><a class="anchor" href="#trueows-context-atom-xml-to-geojson-converter"></a>7.2.2. OWS Context Atom/XML to GeoJSON Converter</h4>
+<div class="paragraph">
+<p>Within The OGC Testbed program, a prototype OWS Context to ATOM/XML to GeoJSON converter was developed. These scripts can be executed using any XSLT 2.0 parser and are available at:</p>
+</div>
+<div class="paragraph">
+<p><a href="http://cite.opengeospatial.org/te2/" class="bare">http://cite.opengeospatial.org/te2/</a></p>
+</div>
+<div class="paragraph">
+<p>The main script takes an ATOM/XML document and generates a valid GeoJSON encoded version.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-05-24 13:44:43 GMTDT
+</div>
+</div>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+<script>hljs.initHighlighting()</script>
+</body>
+</html>
