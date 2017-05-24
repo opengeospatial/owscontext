@@ -215,7 +215,7 @@ The OWS Context document standard does not recommend any specific client action 
  
 *Suggestion 5:* The client could display the AOI in some way (say as a dotted box which can be turned on or off). This means the user can see what the intended AOI of the context document was.
 
-image::images/figure5_1.png[] 
+image::images/Figure5_1.png[] 
 
  
 *Figure 4 – Matching AOI to Display.*

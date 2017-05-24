@@ -17,7 +17,7 @@ The exchange of a common operating picture or view of information is recognized 
 
 A critical element of a shared situational awareness environment, whether used in a military, civil incident management or any other situational awareness context is the ability to exchange COPs between systems based on different technology. There are many equivilent approaches to OWS Context, but none which offer a vendor agnostic approach. This hetrogeneous model means COPs can be shared in a number of environments, for example between command centers and deployed users in vehicles or on foot, and using everything from laptops in mobile vehicles through to tablets, mobile devices or wearable technology (see figure 2.1). 
 
-image::images/figure2_1.png[]
+image::images/Figure2_1.png[]
 *Figure 2.1 - OWS Context SSA Use Case*
 
 A COP may take many forms and have many uses, it may represent a 2D map display, a 3D map display, an augmented reality view, or a textual representation of geospatial information.  
@@ -26,7 +26,7 @@ The COP exchanged is not simply a graphic but a 'live' view. When loaded it shou
 
 In this basic COP use case, OWS Contexts are simply exchanged between systems using a file system or via a messaging system such as email. More advanced exchanges are possible via a catalogue where users can identify groups of context documents relevant to them directly or incidentially. In addition it is possible that users could be notified on new contexts using a subscription scheme (potentially based on the OGC PubSub Standard).
 
-image::images/figure2_2.png[] 
+image::images/Figure2_2.png[] 
 *Figure 2.2 - OWS Context SSA Use Case*
 
 ===== On-Line COP Exchange Via Catalogue

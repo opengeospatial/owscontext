@@ -2,7 +2,7 @@
 
 An OWS Context (OWC) document consists of a number of key elements. These are shown in figure 3.1.
 
-image::images/figure3_1.png[] 
+image::images/Figure3_1.png[] 
 
 *Figure 3.1 - Structure of OWS Context Document*
 
@@ -24,7 +24,7 @@ possible by the format used, equivalent and no priority is assigned to their
 order in the standard. They are intended to be alternatives that the client can
 use to allow it to visualise or use the resource. This structure is shown in Figure 3.2.
 
-image::images/figure3_2.png[]
+image::images/Figure3_2.png[]
 
 *Figure 3.2 - OWS Context Document Offering*
 
