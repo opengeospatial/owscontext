@@ -7,13 +7,13 @@
 
 = ((OWS Context User Guide ))
 
-Publication Date: 2016-mm-dd
+Publication Date: 2017-01-27
 
-Approval Date: 2016-mm-dd
+Approval Date: 2017-01-27
 
-Posted Date: 2016-((01-01))
+Posted Date: 2017-05-23
 
-Reference number of this document: OGC 16-((NNNrN))
+Reference number of this document: OGC 16-080
 
 Reference URL for this document: http://www.opengis.net/doc/PER/t12-((xxx))
 
@@ -21,7 +21,7 @@ Category: User Guide
 
 Editor: ((Roger Brackin))
 
-Title: [big]#Testbed-12 (( OWS Context User Guide ))#
+Title: [big]#OWS Context User Guide#
 
 ''''
 
