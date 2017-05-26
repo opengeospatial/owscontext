@@ -34,7 +34,7 @@ image::images/Figure2_2.png[]
 OGC Compliant catalogue services provide a useful way to manage OWS Context Documents. 
 
 image::images/Figure2_3.png[]
-*Figure 2.2 - OWS Context Catalogue Storage Use Case*
+*Figure 2.3 - OWS Context Catalogue Storage Use Case*
 
 ===== Off-Line COP Exchange
 
